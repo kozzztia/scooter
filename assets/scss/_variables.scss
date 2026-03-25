@@ -1,0 +1,43 @@
+/* variables!
+-------------------------------------------------------------- */
+
+:root{
+
+  // colors
+  --color-white: #fff;
+  --color-white-rgb: 255, 255, 255;
+  --color-black: #000;
+  --color-black-rgb: 0, 0, 0;
+  --color-dark: #1a1a2e;
+  --color-dark-rgb: 26, 26, 46;
+  --color-primary: #0f3460;
+  --color-primary-rgb: 15, 52, 96;
+  --color-accent: #e94560;
+  --color-accent-rgb: 233, 69, 96;
+  --color-grey: #6c757d;
+  --color-grey-rgb: 108, 117, 125;
+  --color-grey-light: #e9ecef;
+  --color-grey-light-rgb: 233, 236, 239;
+  --color-link: #0f3460;
+  --color-input-bg: #f8f9fa;
+  --color-input-border: #ced4da;
+  --color-placeholder: #70777E;
+  --color-success: #2d6a4f;
+  --color-error: #e63946;
+
+  // sizes
+  --main-font-size: 16px;
+
+  // layout
+  --block-side-padding: 40px;
+  --primary-block-width: 1200px;
+  --header-height: 72px;
+
+  // fonts
+  --main-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  @media (max-width: 768px) {
+    --block-side-padding: 20px;
+    --header-height: 60px;
+  }
+}

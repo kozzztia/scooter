@@ -1,0 +1,44 @@
+{% extends "overall/base.twig" %}
+
+{% block base %}
+
+    {% set blocks = [
+        {
+            'name': 'hero',
+            'fields': {
+                'subtitle': 'scooter',
+                'title': 'Clean twig-base for Your Next Project',
+                'description': 'A minimal PHP/Twig engine for building static markup that migrates seamlessly to WordPress.',
+                'buttons': [
+                    {'text': 'Get Started', 'url': 'https://vitaliikaplia.com/', 'style': 'primary', 'target': '_blank'},
+                    {'text': 'Learn More', 'url': 'https://github.com/vitaliikaplia/twig-base', 'style': 'secondary', 'target': '_blank'}
+                ]
+            }
+        },
+        {
+            'name': 'text',
+            'fields': {
+                'title': 'About the Project',
+                'content': '<p>This is a text block example. It uses the <strong>.typo</strong> class for rich text formatting — headings, lists, links, blockquotes, and tables are all styled automatically.</p><p>Use this block for any content sections that require formatted text output.</p>'
+            }
+        },
+        {
+            'name': 'form',
+            'fields': {
+                'title': 'Contact Us',
+                'description': 'Have a question or want to work together? Fill out the form below.'
+            }
+        },
+    ] %}
+
+    {% for block in blocks %}
+        {% include 'blocks/main/' ~ block.name ~ '.twig' with
+            {
+                'block_group': 'main',
+                'block_name': block.name,
+                'fields': block.fields,
+            }
+        %}
+    {% endfor %}
+
+{% endblock %}
