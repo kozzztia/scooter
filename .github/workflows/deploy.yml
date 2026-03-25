@@ -45,10 +45,6 @@ jobs:
         run: |
           wget -q http://localhost:8080 -O dist/index.html
           wget -q http://localhost:8080/home -O dist/home.html
-#          wget -q http://localhost:8080/investment-strategies -O dist/investment-strategies.html
-#          wget -q http://localhost:8080/products-downloads -O dist/products-downloads.html
-#          wget -q http://localhost:8080/about-us -O dist/about-us.html
-#          wget -q http://localhost:8080/news-insights -O dist/news-insights.html
           cp -r assets dist/assets
 
       - name: Replace base URL
