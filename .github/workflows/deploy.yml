@@ -1,0 +1,89 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Cache Composer packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Start PHP server
+        run: php -S localhost:8080 index.php &
+
+      - name: Wait for server
+        run: |
+          for i in {1..10}; do
+            curl -sf http://localhost:8080 && break
+            echo "Waiting... $i"
+            sleep 2
+          done
+
+      - name: Clean dist folder
+        run: rm -rf dist && mkdir dist
+
+      - name: Download pages
+        run: |
+          wget -q http://localhost:8080 -O dist/index.html
+          wget -q http://localhost:8080/home -O dist/home.html
+#          wget -q http://localhost:8080/investment-strategies -O dist/investment-strategies.html
+#          wget -q http://localhost:8080/products-downloads -O dist/products-downloads.html
+#          wget -q http://localhost:8080/about-us -O dist/about-us.html
+#          wget -q http://localhost:8080/news-insights -O dist/news-insights.html
+          cp -r assets dist/assets
+
+      - name: Replace base URL
+        run: |
+          BASE_URL="https://kozzztia.github.io/scooter"
+
+          find dist -type f -name "*.html" -exec sed -i \
+            -e "s|http://localhost:[0-9]*|$BASE_URL|g" \
+            {} \;
+
+      - name: Create clean URLs
+        run: |
+          find dist -maxdepth 1 -name "*.html" ! -name "index.html" | while read f; do
+            name=$(basename "$f" .html)
+            mkdir -p "dist/$name"
+            cp "$f" "dist/$name/index.html"
+          done
+
+      - name: Verify
+        run: |
+          echo "=== localhost ==="
+          if grep -Rn "localhost" dist/*.html 2>/dev/null | head -5; then
+            echo "⚠️ localhost!"
+          else
+            echo "✅ localhost."
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
+
+      - name: Confirm deploy
+        run: |
+          echo "✅ Deploy complete."
+          ls -R dist
