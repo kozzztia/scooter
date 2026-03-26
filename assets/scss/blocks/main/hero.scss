@@ -10,6 +10,11 @@
 		animation: slideUp .4s ease both 0.2s;
 		color: var(--color);
 
+		@media (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+		}
+
 		&:has(#white:checked) {
 			.hero-slide:nth-child(3) { opacity: 1; transform: translateX(0) translateY(0); }
 			.hero-slide:nth-child(4) { opacity: 0; transform: translateX(100%) translateY(0); }
@@ -23,6 +28,10 @@
 
 	.hero-article {
 		max-width: 90%;
+
+		@media (max-width: 768px) {
+			max-width: 100%;
+		}
 
 		.hero-title {
 			font-size: var(--xxl-font-size);
@@ -39,12 +48,16 @@
 			font-size: var(--l-font-size);
 			color: var(--color-accent);
 			font-weight: 600;
-			line-height: 1.2;
+			line-height: 1.4;
 			margin-bottom: clamp(40px, 4.2vw, 60px);
 			max-width: 50%;
 
 			@media (max-width: 1024px) {
 				color: var(--color);
+			}
+
+			@media (max-width: 768px) {
+				max-width: 100%;
 			}
 		}
 
@@ -55,7 +68,6 @@
 			max-width: 220px;
 			border: 1px solid var(--color-white);
 			border-radius: 50px;
-
 
 			input {
 				display: none;
@@ -72,6 +84,7 @@
 				color: var(--color-white);
 				font-weight: 700;
 				text-transform: capitalize;
+				line-height: 1.5;
 			}
 
 			.thumb {
@@ -120,6 +133,18 @@
 		bottom: 0;
 		width: 50%;
 
+		@media (max-width: 1024px) {
+			position: relative;
+			width: 70%;
+		}
+
+		@media (max-width: 768px) {
+			position: relative;
+			width: 100%;
+			height: 60vw;
+			order: -1;
+		}
+
 		label {
 			display: none;
 		}
@@ -146,6 +171,11 @@
 			scale: 3;
 			object-fit: contain;
 			object-position: center;
+
+			@media (max-width: 768px) {
+				transform-origin: 50% 90%;
+				scale: 2;
+			}
 		}
 	}
 
