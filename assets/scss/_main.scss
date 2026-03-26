@@ -110,6 +110,7 @@ a {
 		height: var(--header-height);
 		margin: 0 auto;
 		gap: 80px;
+		animation: slideDown .6s ease both;
 
 		@media (max-width: 768px) {
 			gap: 20px;

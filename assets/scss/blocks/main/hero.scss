@@ -4,94 +4,148 @@
 	padding: 50px var(--block-side-padding) 50px;
 
 	.hero-inner {
+		position: relative;
 		max-width: var(--primary-block-width);
 		margin: 0 auto;
-		animation: slideUp .6s ease both 0.2s;
+		animation: slideUp .4s ease both 0.2s;
 		color: var(--color);
+
+		&:has(#white:checked) {
+			.hero-slide:nth-child(3) { opacity: 1; transform: translateX(0) translateY(0); }
+			.hero-slide:nth-child(4) { opacity: 0; transform: translateX(100%) translateY(0); }
+		}
+
+		&:has(#black:checked) {
+			.hero-slide:nth-child(3) { opacity: 0; transform: translateX(100%) translateY(0); }
+			.hero-slide:nth-child(4) { opacity: 1; transform: translateX(0) translateY(0); }
+		}
 	}
 
 	.hero-article {
 		max-width: 90%;
-	}
 
-	.hero-title {
-		font-size: var(--xxl-font-size);
-		font-weight: 800;
-		line-height: 1;
-		margin-bottom: clamp(20px, 2vw, 30px);
-		@media(max-width: 1024px) {
+		.hero-title {
+			font-size: var(--xxl-font-size);
+			font-weight: 800;
+			line-height: 1;
+			margin-bottom: clamp(20px, 2vw, 30px);
+
+			@media (max-width: 1024px) {
+				color: var(--color-accent);
+			}
+		}
+
+		.hero-description {
+			font-size: var(--l-font-size);
 			color: var(--color-accent);
+			font-weight: 600;
+			line-height: 1.2;
+			margin-bottom: clamp(40px, 4.2vw, 60px);
+			max-width: 50%;
+
+			@media (max-width: 1024px) {
+				color: var(--color);
+			}
+		}
+
+		.hero-actions {
+			position: relative;
+			display: flex;
+			overflow: hidden;
+			max-width: 220px;
+			border: 1px solid var(--color-white);
+			border-radius: 50px;
+
+
+			input {
+				display: none;
+			}
+
+			.hero-radio {
+				font-size: 16px;
+				z-index: 2;
+				width: 50%;
+				padding: 10px;
+				cursor: pointer;
+				transition: color 0.2s;
+				text-align: center;
+				color: var(--color-white);
+				font-weight: 700;
+				text-transform: capitalize;
+			}
+
+			.thumb {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+				border-radius: 50px;
+				background-color: var(--color-white);
+			}
+
+			&:has(#black:checked) .thumb {
+				animation: to-right 0.2s ease forwards;
+			}
+
+			&:has(#white:checked) .thumb {
+				animation: to-left 0.2s ease forwards;
+			}
+
+			@keyframes to-right {
+				0%   { width: 50%; left: 0; }
+				50%  { width: 100%; left: 0; }
+				100% { width: 50%; left: 50%; }
+			}
+
+			@keyframes to-left {
+				0%   { width: 50%; left: 50%; }
+				50%  { width: 100%; left: 0; }
+				100% { width: 50%; left: 0; }
+			}
+
+			&:has(#white:checked) label[for='white'],
+			&:has(#black:checked) label[for='black'] {
+				color: var(--color-black);
+			}
 		}
 	}
 
-	.hero-description {
-		font-size: var(--l-font-size);
-		font-weight: 600;
-		line-height: 1.2;
-		margin-bottom: clamp(40px, 4.2vw, 60px);
-		@media(max-width: 1024px) {
-			color: var(--color-accent);
-		}
-	}
+	.hero-slider {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
 
-	.hero-actions {
-		display: flex;
-		overflow: hidden;
-		max-width: 220px;
-		border: 1px solid var(--color-white);
-		border-radius: 50px;
-		position: relative;
-
-		input {
+		label {
 			display: none;
 		}
 
-		.hero-radio {
-			width: 50%;
-			padding: 10px;
-			text-align: center;
-			z-index: 2;
-			cursor: pointer;
-			color: var(--color-white);
-			font-size: 16px;
-			transition: color 0.2s;
-		}
-
-		.thumb {
-			z-index: 1;
+		.hero-slide {
 			position: absolute;
-			top: 0;
-			left: 0;
-			width: 50%;
+			inset: 0;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.4s ease, transform 0.5s ease;
+			transform: translateX(100%) translateY(0);
+
+			&:nth-child(3) {
+				opacity: 1;
+				transform: translateX(0) translateY(0);
+			}
+		}
+
+		img {
+			width: 100%;
 			height: 100%;
-			background-color: var(--color-white);
-			border-radius: 50px;
-		}
-
-
-		&:has(#black:checked) .thumb {
-			animation: to-right 0.2s ease forwards;
-		}
-
-		&:has(#white:checked) .thumb {
-			animation: to-left 0.2s ease forwards;
-		}
-
-		@keyframes to-right {
-			0%   { width: 50%; left: 0; }
-			50%  { width: 100%; left: 0; }
-			100% { width: 50%; left: 50%; }
-		}
-
-		@keyframes to-left {
-			0%   { width: 50%; left: 50%; }
-			50%  { width: 100%; left: 0; }
-			100% { width: 50%; left: 0; }
-		}
-
-		&:has(#white:checked) label[for="white"],
-		&:has(#black:checked) label[for="black"] {
-			color: var(--color-black);
+			transform: translateX(15%) translateY(0);
+			transform-origin: 50% 70%;
+			scale: 3;
+			object-fit: contain;
+			object-position: center;
 		}
 	}
 
