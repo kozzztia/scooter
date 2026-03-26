@@ -9,6 +9,10 @@ html {
 main {
 	flex: 1 0 auto;
 	padding-top: var(--header-height);
+	background-image: url('../img/desktop.webp');
+	background-repeat: no-repeat repeat;
+	background-size: auto;
+	background-position:  center top -600px;
 }
 
 body {
@@ -91,15 +95,15 @@ a {
 	@include transform(translateZ(100px));
 	@include transition(transform .3s ease, box-shadow .3s ease);
 	background-color: transparent;
+	padding-inline: var(--block-side-padding);
 
 	.header-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: calc(var(--primary-block-width) + var(--block-side-padding) * 2);
+		max-width: var(--primary-block-width);
 		height: var(--header-height);
 		margin: 0 auto;
-		padding: 0 var(--block-side-padding);
 		gap: 80px;
 	}
 
