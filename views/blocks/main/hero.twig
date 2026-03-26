@@ -10,7 +10,8 @@
                 {% endfor %}
                 {% for radio in fields.radio %}
                     <div class="hero-slide">
-                        <img src="{{ radio.img }}" alt="{{ radio.role }}">
+                        <img class="hero-decor" src="{{ svg_folder }}dec-3.svg" alt="{{ radio.role }}">
+                        <img class="hero-img" src="{{ radio.img }}" alt="{{ radio.role }}">
                     </div>
                 {% endfor %}
             </div>
