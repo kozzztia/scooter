@@ -14,48 +14,21 @@
 	//theme
 	--color: var(--color-white);
 	--background-color: var(--color-dark);
-	--accent-color: var(--color-red);
+	--color-accent: var(--color-red);
 	//dynamic sizes
-	--xxl-font-size: clamp(80px, 3vw, 30px);
-	--xl-font-size: clamp(45px, 3vw, 25px);
-	--l-font-size: clamp(30px, 3vw, 16px);
-	--s-font-size: clamp(20px, 3vw, 16px);
-	--ss-font-size: clamp(16px, 3vw, 14px);
-	--main-font-size: clamp(14px, 3vw, 12px);
-	--block-side-padding: clamp(20px, 3vw, 16px);
-	--header-height: clamp(134px, 3vw, 85px);
+	--xxl-font-size:      clamp(36px, 5.5vw, 80px);   /* Hero title */
+	--xl-font-size:       clamp(28px, 3.5vw, 45px);   /* H1 */
+	--l-font-size:        clamp(20px, 2.5vw, 30px);   /* H2/H3 */
+	--m-font-size:        clamp(16px, 1.8vw, 20px);   /* Body text */
+	--s-font-size:        clamp(14px, 1.4vw, 16px);   /* Small text */
+	--xs-font-size:       clamp(12px, 1vw, 14px);     /* Extra small */
+
+	--block-side-padding: clamp(16px, 3vw, 40px);
+	--header-height:      clamp(85px, 8vw, 134px);
+
 	//sizes
 	--primary-block-width: 1159px;
-
-
-	// 700 600 400 500
-
-
-
-
-	//--color-dark: #1a1a2e;
-	//--color-dark-rgb: 26, 26, 46;
-	//--color-primary: #0f3460;
-	//--color-primary-rgb: 15, 52, 96;
-	//--color-grey: #6c757d;
-	//--color-grey-rgb: 108, 117, 125;
-	//--color-grey-light: #e9ecef;
-	//--color-grey-light-rgb: 233, 236, 239;
-	//--color-link: #0f3460;
-	//--color-input-bg: #f8f9fa;
-	//--color-input-border: #ced4da;
-	//--color-placeholder: #70777E;
-	//--color-success: #2d6a4f;
-	//--color-error: #e63946;
-	// sizes
-	//--main-font-size: 16px;
-	// layout
-	//--header-height: 72px;
-	// fonts
+	--radius: 15px;
+	//other
 	--main-font-family: Gilroy, sans-serif;
-
-	@media (max-width: 768px) {
-		--block-side-padding: 20px;
-		--header-height: 60px;
-	}
 }

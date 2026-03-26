@@ -2,15 +2,18 @@
     <div class="header-wrapper">
         <div class="logo-on-page">
             <a href="/" class="custom-logo-link">
-                <img src="{{ site.url }}/assets/svg/favicon.svg" alt="{{ site.name }}" class="logo-icon" width="32" height="32">
-                {{ site.name }}
+                <svg  class="logo-icon">
+                    <use href="{{ svg_sprite }}#logo"></use>
+                </svg>
             </a>
         </div>
         <nav class="desktop-nav">
             <ul id="primary-menu" class="menu">
                 <li class="menu-item"><a href="#">About</a></li>
-                <li class="menu-item"><a href="#">Services</a></li>
-                <li class="menu-item"><a href="#">Contact</a></li>
+                <li class="menu-item"><a href="#">Appearance</a></li>
+                <li class="menu-item"><a href="#">Security</a></li>
+                <li class="menu-item"><a href="#">Reviews</a></li>
+                <li class="menu-item"><a href="#">FAQ</a></li>
             </ul>
         </nav>
         <button class="menu-toggler" type="button" aria-label="Toggle navigation">
