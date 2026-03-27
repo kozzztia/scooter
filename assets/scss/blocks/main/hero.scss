@@ -169,6 +169,17 @@
 			display: none;
 		}
 
+		.hero-decor{
+			position: absolute;
+			top: 53%;
+			left: 5%;
+			width: 100%;
+			height: auto;
+			display: block;
+			z-index: -1;
+			scale: 2;
+		}
+
 		.hero-slide {
 			position: absolute;
 			inset: 0;
@@ -199,16 +210,6 @@
 			object-fit: contain;
 			object-position: center;
 			display: block;
-		}
-
-		.hero-decor{
-			position: absolute;
-			top: 53%;
-			left: 5%;
-			width: 70%;
-			height: auto;
-			display: block;
-			z-index: -1;
 		}
 	}
 
