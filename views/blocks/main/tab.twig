@@ -1,0 +1,29 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+<div class="tab-section" style="{{ fields.style? fields.style : '' }}">
+    <div class="tab-inner">
+    {% if fields.tabs is defined and fields.tabs %}
+        <div class="tab">
+        {% for  tab  in fields.tabs %}
+            <input type="radio" name="{{ fields.name }}" id="{{ fields.name }}-{{ tab.id }}" {% if loop.index == 2 %}checked{% endif %}/>
+            <label class="tab-label" for="{{ fields.name }}-{{ tab.id }}">
+                <span class="tab-title">{{ tab.title }}</span>
+                <span class="typo">{{ tab.description }}</span>
+            </label>
+        {% endfor %}
+        </div>
+
+        <div class="gallery">
+            {% for  tab  in fields.tabs %}
+                <label for="{{ fields.name }}-{{ tab.id }}" class="gallery-label">
+                    <img src="{{ tab.img }}" alt="{{ tab.title }}">
+                </label>
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}

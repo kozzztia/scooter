@@ -1,13 +1,14 @@
 @use '../../mixins' as *;
 
 .hero-2-section {
-	margin-bottom: 50px;
+
 	padding-inline: var(--block-side-padding);
 
 	.hero-2-inner {
 		position: relative;
 		max-width: var(--primary-block-width);
-		margin: 0 auto;
+		margin-inline: auto;
+		margin-bottom: 50px;
 		animation: slideUp .4s ease both 0.2s;
 		color: var(--color);
 		@media (max-width: 768px) {

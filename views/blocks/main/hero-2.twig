@@ -2,7 +2,7 @@
 
 {% block block %}
 
-    <div class="hero-2-section">
+    <div class="hero-2-section" style="{{ fields.style? fields.style : '' }}">
         <div class="hero-2-inner">
             <div class="hero-2-slider">
                 {% for button in fields.buttons %}

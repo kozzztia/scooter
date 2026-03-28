@@ -2,7 +2,7 @@
 
 {% block block %}
 
-<div class="text-section">
+<div class="text-section" style="{{ fields.style? fields.style : '' }}">
     <div class="text-inner">
         {% if fields.title is defined and fields.title %}
         <h2 class="text-title">{{ fields.title }}</h2>

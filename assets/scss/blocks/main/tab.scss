@@ -1,0 +1,166 @@
+@use '../../mixins' as *;
+
+.tab-section {
+	padding-inline: var(--block-side-padding);
+
+	.tab-inner {
+		max-width: var(--primary-block-width);
+		margin-bottom: 24px;
+		color: var(--color-white);
+		margin-inline: auto;
+
+		input {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+		}
+	}
+
+	.tab {
+		display: flex;
+		color: var(--color-white);
+		gap: 20px;
+		margin-bottom: 20px;
+
+		&-label {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+
+		}
+
+		&-title {
+			font-size: var(--m-font-size);
+			opacity: 0.4;
+			@include transition(opacity 0.2s);
+		}
+
+		.typo {
+			font-size: var(--xs-font-size);
+			opacity: 0.4;
+			@include transition(opacity 0.2s);
+		}
+	}
+
+	.gallery {
+		display: flex;
+
+		&-label {
+			overflow: hidden;
+			flex: 1;
+			transform: scale(0.6);
+			border-radius: 15px;
+			transform-origin: 50% 0;
+			@include transition(all 0.2s);
+
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+
+	.tab-inner {
+		&:has(#tab-1:checked) {
+			.tab {
+				label[for$='-1'] {
+					.tab-title, .typo{
+						opacity: 1;
+					}
+				}
+			}
+
+			.gallery {
+				//label[for$='-1'] {
+				//	transform: scale(1);
+				//}
+				//label[for$='-2'] {
+				//	transform: translateX(calc(-1 * 25% + 20px)) scale(0.6);
+				//}
+				//label[for$='-3'] {
+				//	transform: translateX(calc(-1 * 25% + 20px)) scale(0.6);
+				//}
+				label[for$='-1'] {
+					transform: scale(1);
+					margin-right: -50%;
+				}
+				label[for$='-2'] {
+					transform: translateX(calc(80% + 10px)) scale(0.6);
+				}
+				label[for$='-3'] {
+					transform: translateX(calc(40% + 20px)) scale(0.6);
+				}
+			}
+		}
+
+		&:has(#tab-2:checked) {
+			.tab {
+				label[for$='-2'] {
+					.tab-title, .typo{
+						opacity: 1;
+					}
+				}
+			}
+
+			.gallery {
+				//label[for$='-1'] {
+				//	transform: translateX(calc(25% - 20px)) scale(0.6);
+				//}
+				//label[for$='-2'] {
+				//	transform: scale(1);
+				//}
+				//label[for$='-3'] {
+				//	transform: translateX(calc(-1 * 25% + 20px)) scale(0.6);
+				//}
+				label[for$='-1'] {
+					transform: translateX(calc(-1 * 30% - 10px)) scale(0.6);
+				}
+				label[for$='-2'] {
+					transform: scale(1);
+					margin-inline: -25%;
+				}
+				label[for$='-3'] {
+					transform: translateX(calc(30% + 10px)) scale(0.6);
+				}
+			}
+		}
+
+		&:has(#tab-3:checked) {
+			.tab {
+				label[for$='-3'] {
+					.tab-title, .typo{
+						opacity: 1;
+					}
+				}
+			}
+
+			.gallery {
+				//label[for$='-1'] {
+				//	transform: translateX(calc(25% - 20px)) scale(0.6);
+				//}
+				//label[for$='-2'] {
+				//	transform: translateX(calc(25% - 20px)) scale(0.6);
+				//}
+				//label[for$='-3'] {
+				//	transform: scale(1);
+				//}
+				label[for$='-1'] {
+					transform: translateX(calc(-1 * 40% - 20px)) scale(0.6);
+				}
+				label[for$='-2'] {
+					transform: translateX(calc(-1 * 80% - 10px)) scale(0.6);
+				}
+				label[for$='-3'] {
+					transform: scale(1);
+					margin-left: -50%;
+				}
+
+			}
+		}
+	}
+}
