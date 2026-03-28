@@ -8,6 +8,7 @@ html {
 
 main {
 	flex: 1 0 auto;
+	padding-top: var(--header-height);
 	background-image: url('../img/desktop.webp');
 	background-repeat: no-repeat repeat;
 	background-position: center top -600px;
@@ -87,10 +88,6 @@ body {
 
 a {
 	@include transition(color .2s ease, opacity .2s ease);
-}
-
-.cookiePopupWrapper{
-	overflow: hidden;
 }
 
 /* header */

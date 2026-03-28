@@ -1,17 +1,15 @@
 @use '../../mixins' as *;
 
 .hero-2-section {
-
 	padding-inline: var(--block-side-padding);
-	padding-top: var(--header-height);
 
 	.hero-2-inner {
 		position: relative;
 		max-width: var(--primary-block-width);
-		margin-inline: auto;
 		margin-bottom: 50px;
 		animation: slideUp .4s ease both 0.2s;
 		color: var(--color);
+		margin-inline: auto;
 		@media (max-width: 768px) {
 			display: flex;
 			flex-direction: column;
@@ -47,10 +45,9 @@
 				object-position: center;
 			}
 
-			&:nth-child(1){
+			&:nth-child(1) {
 				display: block;
 				animation: slide-left .1s ease both;
-
 				@media (max-width: 768px) {
 					animation: slide-left-mob .1s ease both;
 				}
@@ -59,7 +56,6 @@
 			&:nth-child(2) {
 				display: none;
 				animation: slide-right .3s ease both;
-
 				@media (max-width: 768px) {
 					animation: slide-right-mob .3s ease both;
 				}
@@ -112,9 +108,9 @@
 			display: flex;
 			overflow: hidden;
 			max-width: 220px;
+			user-select: none;
 			border: 1px solid var(--color-white);
 			border-radius: 50px;
-			user-select: none;
 			@media (max-width: 768px) {
 				margin-inline: auto;
 			}
@@ -207,12 +203,11 @@
 			}
 		}
 
-		.hero-2-slider{
+		.hero-2-slider {
 			.hero-slide {
-				&:nth-child(2){
+				&:nth-child(2) {
 					display: block;
 					animation: slide-left .3s ease both;
-
 					@media (max-width: 768px) {
 						animation: slide-left-mob .3s ease both;
 					}
@@ -221,7 +216,6 @@
 				&:nth-child(1) {
 					display: none;
 					animation: slide-right .1s ease both;
-
 					@media (max-width: 768px) {
 						animation: slide-right-mob .1s ease both;
 					}
