@@ -74,11 +74,15 @@
 		}
 	}
 
-	.banner-inner>svg{
+	.banner-decor{
 		position: absolute;
 		z-index: 80;
 		color: var(--color-accent);
 		top: -10%;
 		left: -20%;
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
 	}
 }

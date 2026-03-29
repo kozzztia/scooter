@@ -10,11 +10,27 @@
 	    display: flex;
 	    align-items: stretch;
 	    gap : 20px;
+	    position: relative;
 
 	    @media (max-width: 1024px){
 		    flex-direction: column;
 	    }
     }
+	.cards-decor{
+		position: absolute;
+		color: var(--color-accent);
+		top: 0;
+		left: 0;
+		translate: -50% 30%;
+		width : 600px;
+		height : auto;
+		rotate: 45deg;
+		z-index: 1;
+
+		@media (max-width: 1024px){
+			display: none;
+		}
+	}
 
     .card{
 		flex : 1;

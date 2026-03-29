@@ -5,6 +5,33 @@
 {% if fields.cards is defined and fields.cards %}
 <div class="cards-section {% if fields.class %}{{ fields.class }}{% endif %}">
     <div class="cards-inner">
+    {% if fields.decor %}
+        <svg class="cards-decor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 698.8 596">
+            <style type="text/css">
+                .cards-svg {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-linecap: round;
+                    stroke-width: 5;
+                    stroke-miterlimit: 10;
+                    stroke-dasharray: 3000;
+                    stroke-dashoffset: -3000;
+                    animation: draw 2s linear forwards 2s;
+                }
+
+                @keyframes draw {
+                    to { stroke-dashoffset: 0; }
+                }
+            </style>
+            <path class="cards-svg" d="M68.5,1.9C53.4,14.4,40.4,27.4,30.4,44.4c-1,1-2,2-3,3c-32,56-35,124,2,180c1,1,2,2,3,3c10,17,24,28,40,40
+            c21,14,43,22,67,26c43,7,84,1,121-24c2-2,4-3,7-5c42-35,69-95,42-146c-6-11-13-19-23-27c-24-18-52-24-81-21c-11,2-22,5-33,9
+            c-6,3-12,7-18,11c-9,7-15,14-21,23c-7,11-11,21-14,33s-4,24-3,37c2,23,8,44,21,64c11,15,22,28,39,36c1,1,2,2,3,3c47,25,99,23,150,15
+            c73-13,145-38,216-12c39,15,71,41,94,77c3,5,6,10,9,15c10,19,17,38,21,59c2,14,4,28,3,42c-3,42-22,87-63,104c-17,6-35,6-51-4
+            c-15-9-26-23-32-39c-4-12-7-24-7-37c0-47,13-93,29-138c12-32,26-61,48-88c27-32,61-57,101.8-66.8"/>
+        </svg>
+
+    {% endif %}
+
     {% for card in fields.cards %}
         <div class="card">
             <div class="card-img">
