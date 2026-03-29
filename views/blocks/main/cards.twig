@@ -1,0 +1,31 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+{% if fields.cards is defined and fields.cards %}
+<div class="cards-section {% if fields.class %}{{ fields.class }}{% endif %}">
+    <div class="cards-inner">
+    {% for card in fields.cards %}
+        <div class="card">
+            <div class="card-img">
+                <img src="{{ card.img }}" alt="{{ card.title }}">
+            </div>
+
+            <article class="card-article">
+            {% if card.title %}
+                <h4 class="card-title">{{ card.title }}</h4>
+            {% endif %}
+
+            {% if card.content %}
+                <div class="typo">
+                    {{ card.content }}
+                </div>
+            {% endif %}
+            </article>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
