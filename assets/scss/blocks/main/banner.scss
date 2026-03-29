@@ -74,7 +74,11 @@
 		}
 	}
 
-	svg{
-
+	.banner-inner>svg{
+		position: absolute;
+		z-index: 80;
+		color: var(--color-accent);
+		top: -10%;
+		left: -20%;
 	}
 }
