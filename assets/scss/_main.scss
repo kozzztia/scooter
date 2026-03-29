@@ -116,29 +116,9 @@ a {
 			gap: 20px;
 		}
 	}
-
-	.logo-on-page {
-		a {
-			display: flex;
-			align-items: center;
-			text-decoration: none;
-			color: inherit;
-			@media (max-width: 1024px) {
-				color: var(--color-accent);
-			}
-
-			&:hover {
-				color: var(--color-accent);
-			}
-
-			svg {
-				width: 60px;
-				height: 39px;
-				@media (max-width: 768px) {
-					width: 49px;
-					height: 29px;
-				}
-			}
+	.header-logo{
+		@media (max-width: 1024px) {
+			color: var(--color-accent);
 		}
 	}
 
@@ -250,6 +230,32 @@ a {
 		}
 	}
 }
+
+
+.custom-logo-link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: var(--color-accent);
+	}
+
+	svg {
+		width: 60px;
+		height: 39px;
+		@media (max-width: 768px) {
+			width: 49px;
+			height: 29px;
+		}
+	}
+}
+
+
+
+
+
 
 /* mobile nav */
 .mobile-nav {

@@ -6,28 +6,29 @@
         {
             'name': 'hero-2',
             'fields': {
-                'style': 'margin-bottom: 70px;',
-                'title': 'Stylish electric scooter with a powerful battery',
-                'description': 'Improved performance for long-distance travel. It works as simply as it looks.',
-                'buttons': [
-                    {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp'},
-                    {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp'},
-                ]
-            }
+            'style': 'margin-bottom: 50px;',
+            'title': 'Stylish electric scooter with a powerful battery',
+            'description': 'Improved performance for long-distance travel. It works as simply as it looks.',
+            'buttons': [
+                {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp'},
+                {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp'},
+            ]
+        }
         },
+
         {
             'name': 'text',
             'fields': {
-            'style': '',
+            'style': 'margin-bottom: 25px;',
             'class': '',
-                'title': 'A powerful battery and economical charge consumption allow you to cover distances of up to 45 km'
-            }
+            'title': 'A powerful battery and economical charge consumption allow you to cover distances of up to 45 km'
+        }
         },
 
         {
             'name': 'tab',
             'fields': {
-            'style': '',
+            'style': 'margin-bottom: 50px;',
             'class': '',
             'name': 'tab',
             'tabs': [
@@ -39,11 +40,22 @@
         },
 
         {
+            'name': 'banner',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'class': '',
+            'title': 'High movement speed',
+            'content': 'An engine with a power of up to 600 W allows for speeds of up to 25 km/h.',
+        }
+        },
+
+
+        {
             'name': 'form',
             'fields': {
-                'title': 'Contact Us',
-                'description': 'Have a question or want to work together? Fill out the form below.'
-            }
+            'title': 'Contact Us',
+            'description': 'Have a question or want to work together? Fill out the form below.'
+        }
         },
     ] %}
 
@@ -53,8 +65,7 @@
                 'block_group': 'main',
                 'block_name': block.name,
                 'fields': block.fields,
-            }
-        %}
+            } %}
     {% endfor %}
 
 {% endblock %}

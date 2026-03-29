@@ -2,11 +2,19 @@
 
 {% block block %}
 
-<div class="text-section">
-    <div class="text-inner">
+<div class="banner-section">
+    <div class="banner-inner">
+
+
+
+        <div class="banner-logo">
+            {% include "overall/logo.twig" %}
+        </div>
+
         {% if fields.title is defined and fields.title %}
-        <h2 class="text-title">{{ fields.title }}</h2>
+        <h3 class="banner-title">{{ fields.title }}</h3>
         {% endif %}
+
         {% if fields.content is defined and fields.content %}
         <div class="typo">
             {{ fields.content|raw }}

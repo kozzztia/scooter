@@ -1,12 +1,9 @@
 <header class="header">
     <div class="header-wrapper">
         <div class="logo-on-page">
-            <a href="/" class="custom-logo-link">
-                <svg  class="logo-icon">
-                    <use href="{{ svg_sprite }}#logo"></use>
-                </svg>
-            </a>
+            {% include "overall/logo.twig" %}
         </div>
+
         <nav class="desktop-nav">
             <ul id="primary-menu" class="menu">
                 <li class="menu-item"><a href="#">About</a></li>
