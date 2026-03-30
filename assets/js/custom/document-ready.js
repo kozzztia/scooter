@@ -44,5 +44,11 @@
             });
         }
 
+        if ($('.main-slider').length) {
+            $('.slider').each(function () {
+                initSlider(this);
+            });
+        }
+
     });
 })(jQuery);

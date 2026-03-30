@@ -1,0 +1,26 @@
+@use '../../mixins' as *;
+
+.slider-section{
+    padding-inline: var(--block-side-padding);
+	color: var(--color-white);
+
+    .slider-inner{
+        max-width: var(--primary-block-width);
+        margin-inline: auto;
+    }
+
+	.slider{
+
+		&-wrapper{
+
+		}
+
+		&-slide{
+
+		}
+	}
+
+	.comment{
+
+	}
+}

@@ -1,0 +1,23 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+<div class="slider-section {% if fields.class %}{{ fields.class }}{% endif %}">
+    <div class="slider-inner">
+    {% if fields.slides is defined and fields.slides %}
+        <div class="swiper slider">
+            <div class="swiper-wrapper">
+            {% for slide in fields.slides %}
+                <div class="swiper-slide slider-slide">
+                    {% include 'overall/comment.twig' with slide %}
+                </div>
+            {% endfor %}
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}
