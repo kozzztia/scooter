@@ -18,14 +18,13 @@
 		}
 	}
 
-	.tab-decor{
+	.tab-decor-1 {
 		position: absolute;
-		width: 120%;
-		top : 10%;
-		left: -10%;
 		z-index: -1;
+		top: 10%;
+		left: -10%;
+		width: 120%;
 		color: var(--color-accent);
-
 		@media (max-width: 1024px) {
 			display: none;
 			//width: 100%;
@@ -36,6 +35,23 @@
 		}
 	}
 
+	.tab-decor-2 {
+		position: absolute;
+		z-index: -1;
+		top: 20%;
+		rotate: -15deg;
+		left: -10%;
+		width: 120%;
+		color: var(--color-accent);
+		@media (max-width: 1024px) {
+			display: none;
+			//width: 100%;
+			//top : 0;
+			//left: 20%;
+			//scale: 1.5;
+			//z-index: -1;
+		}
+	}
 
 	.tab {
 		display: flex;
@@ -53,7 +69,7 @@
 			@include transition(opacity 0.2s);
 		}
 
-		&-thumb{
+		&-thumb {
 			height: 3px;
 			background: var(--color-white);
 			margin-block: 15px;
@@ -68,12 +84,12 @@
 
 	.gallery {
 		display: flex;
+		aspect-ratio: 8/3;
 
 		&-label {
 			overflow: hidden;
-			flex: 1;
 			border-radius: 15px;
-			@include transition(all 0.2s);
+			@include transition(all 0.3s);
 
 			img {
 				display: block;
@@ -92,22 +108,23 @@
 			opacity: 0.4;
 		}
 
-		.typo{
+		.typo {
 			padding-right: 20px;
 		}
 
 		.gallery-label {
-			transform: scale(0.6);
-			transform-origin: 50% 0;
+			height: 70%;
+			opacity: 0;
 		}
 
-		&:has(#tab-1:checked) {
+		&:has(input[id$='-1']:checked) {
 			.tab {
 				label[for$='-1'] {
 					.tab-title, .typo, .tab-thumb {
 						opacity: 1;
 					}
-					.tab-thumb{
+
+					.tab-thumb {
 						background-color: var(--color-accent);
 					}
 				}
@@ -115,91 +132,159 @@
 
 			.gallery {
 				label[for$='-1'] {
-					margin-right: -50%;
-					transform: scale(1);
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
 				}
 
 				label[for$='-2'] {
-					transform: translateX(calc(80% + 10px)) scale(0.6);
+					width: calc(33% - 10px);
+					opacity: 1;
+					margin-left : 20px;
 				}
 
-				label[for$='-3'] {
-					transform: translateX(calc(40% + 20px)) scale(0.6);
+				label[for$='-3'],label[for$='-4'] {
+					width: 0;
+					visibility: hidden;
 				}
 			}
 		}
 
-		&:has(#tab-2:checked) {
+		&:has(input[id$='-2']:checked) {
 			.tab {
 				label[for$='-2'] {
 					.tab-title, .typo, .tab-thumb {
 						opacity: 1;
 					}
-					.tab-thumb{
+
+					.tab-thumb {
 						background-color: var(--color-accent);
 					}
 				}
 			}
 
 			.gallery {
-				label[for$='-1'] {
-					transform: translateX(calc(-1 * 30% - 10px)) scale(0.6);
-				}
-
 				label[for$='-2'] {
-					transform: scale(1);
-					margin-inline: -25%;
+					width: calc(67% - 10px);
+					height: 100%;
+					scale: 1;
+					opacity: 1;
 				}
 
 				label[for$='-3'] {
-					transform: translateX(calc(30% + 10px)) scale(0.6);
+					width: calc(33% - 10px);
+					margin-left : 20px;
+					opacity: 1;
+				}
+
+				label[for$='-4'], label[for$='-1'] {
+					width: 0;
+					visibility: hidden;
 				}
 			}
 		}
 
-		&:has(#tab-3:checked) {
+		&:has(input[id$='-3']:checked) {
 			.tab {
 				label[for$='-3'] {
 					.tab-title, .typo, .tab-thumb {
 						opacity: 1;
 					}
-					.tab-thumb{
+
+					.tab-thumb {
 						background-color: var(--color-accent);
 					}
 				}
 			}
 
 			.gallery {
-				label[for$='-1'] {
-					transform: translateX(calc(-1 * 40% - 20px)) scale(0.6);
-				}
-
-				label[for$='-2'] {
-					transform: translateX(calc(-1 * 80% - 10px)) scale(0.6);
-				}
-
 				label[for$='-3'] {
-					margin-left: -50%;
-					transform: scale(1);
+					width: calc(67% - 10px);
+					height: 100%;
+					scale: 1;
+					opacity: 1;
+				}
+
+				label[for$='-1']{
+					width: calc(33% - 10px);
+					margin-right : 20px;
+					opacity: 1;
+				}
+
+				label[for$='-2']{
+					width: 0;
+					visibility: hidden;
+				}
+
+
+
+				&:has(label[for$='-4']){
+
+					label[for$='-4'] {
+						width: calc(33% - 10px);
+						margin-left : 20px;
+						opacity: 1;
+					}
+
+					label[for$='-1'] {
+						width: 0;
+						visibility: hidden;
+					}
 				}
 			}
 		}
 
-		@media (max-width: 768px) {
+		&:has(input[id$='-4']:checked) {
+			.tab {
+				label[for$='-4'] {
+					.tab-title, .typo, .tab-thumb {
+						opacity: 1;
+					}
+
+					.tab-thumb {
+						background-color: var(--color-accent);
+					}
+				}
+			}
+
+			.gallery {
+				label[for$='-4'] {
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
+					scale: 1;
+				}
+
+				label[for$='-1'] {
+					width: calc(33% - 10px);
+					opacity: 1;
+					height: 70%;
+					margin-right : 20px;
+				}
+
+				label[for$='-2'],label[for$='-3'] {
+					width: 0;
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
 			display: none;
 		}
 	}
 
 	.mobile {
 		display: none;
-		@media (max-width: 768px) {
+		@media (max-width: 1024px) {
 			display: block;
 		}
 
-		.tab-thumb{
+		.tab-thumb {
+			width: 20%;
+			min-width: 150px;
 			background-color: var(--color-accent);
-			width :20%;
-			min-width : 150px;
 		}
 
 		.tab-title, {
