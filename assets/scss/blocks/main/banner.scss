@@ -33,6 +33,7 @@
 
 		&:before {
 			position: absolute;
+			z-index: 90;
 			right: -141px;
 			bottom: 0;
 			left: -141px;
@@ -40,7 +41,6 @@
 			height: 50%;
 			content: '';
 			background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
-			z-index: 90;
 			@media (max-width: 1024px) {
 				right: -40px;
 				left: -40px;
@@ -59,30 +59,46 @@
 		font-size: var(--xl-font-size);
 		font-weight: 500;
 		line-height: 1.1;
+		z-index: 100;
 		max-width: 950px;
 		margin-bottom: 20px;
-		z-index: 100;
 	}
 
 	.typo {
 		font-size: var(--xs-font-size);
 		font-weight: 400;
-		max-width: 350px;
 		z-index: 100;
+		max-width: 350px;
 		@media (max-width: 768px) {
 			max-width: 280px;
 		}
 	}
 
-	.banner-decor{
+	.banner-decor {
 		position: absolute;
 		z-index: 80;
-		color: var(--color-accent);
 		top: -10%;
 		left: -20%;
-
+		color: var(--color-accent);
 		@media (max-width: 1024px) {
 			display: none;
+		}
+	}
+
+	&.about {
+		background-image: url('../../../img/hero-2.webp');
+
+		.banner-logo {
+			margin-bottom: 240px;
+			color: var(--color-accent);
+		}
+
+		.banner-title {
+			color: var(--color-accent);
+		}
+
+		.typo{
+			color: var(--color-black);
 		}
 	}
 }
