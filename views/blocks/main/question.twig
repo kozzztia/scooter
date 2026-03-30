@@ -1,0 +1,13 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+<div class="question-section {% if fields.class %}{{ fields.class }}{% endif %}">
+    <div class="question-inner">
+    {% if fields.title is defined and fields.title %}
+        {{ fields.title }}
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,25 +1,16 @@
 @use '../../mixins' as *;
 
-.text-section{
+.question-section{
     padding-inline: var(--block-side-padding);
 	color: var(--color-white);
 
-	&.accented{
-		color: var(--color-accent);
-
-		@media (max-width: 1024px){
-			color: var(--color-white);
-		}
-	}
-
-    .text-inner{
+    .question-inner{
         max-width: var(--primary-block-width);
         margin-inline: auto;
 	    margin-bottom: 24px;
     }
 
-    .text-title{
-	    max-width: 850px;
+    .question-title{
         font-size: var(--xl-font-size);
         font-weight: 500;
 	    line-height: 1;

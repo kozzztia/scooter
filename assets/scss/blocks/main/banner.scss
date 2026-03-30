@@ -100,5 +100,23 @@
 		.typo{
 			color: var(--color-black);
 		}
+		.banner-inner{
+			&:before {
+				position: absolute;
+				z-index: 90;
+				right: -141px;
+				bottom: 0;
+				left: -141px;
+				display: block;
+				height: 50%;
+				content: '';
+				background: linear-gradient(to top, rgba(243, 163, 90, 0.1) 0%, transparent 100%);
+				
+				@media (max-width: 1024px) {
+					right: -40px;
+					left: -40px;
+				}
+			}
+		}
 	}
 }
