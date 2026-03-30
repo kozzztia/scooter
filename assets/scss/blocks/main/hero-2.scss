@@ -2,6 +2,11 @@
 
 .hero-2-section {
 	padding-inline: var(--block-side-padding);
+	//for  hero-2
+	padding-top: var(--header-height);
+	@media (max-width: 1024px){
+		overflow: hidden;
+	}
 
 	.hero-2-inner {
 		position: relative;
@@ -10,6 +15,8 @@
 		animation: slideUp .4s ease both 0.2s;
 		color: var(--color);
 		margin-inline: auto;
+		
+
 		@media (max-width: 768px) {
 			display: flex;
 			flex-direction: column;
@@ -17,6 +24,7 @@
 				position: relative;
 			}
 		}
+		;
 	}
 
 	.hero-2-slider {
