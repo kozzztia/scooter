@@ -1,0 +1,107 @@
+@use '../../mixins' as *;
+
+.single-banner-section {
+	color: var(--color-white);
+	padding-inline: var(--block-side-padding);
+
+	.single-banner-inner {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		max-width: var(--primary-block-width);
+		margin-inline: auto;
+		gap: 40px;
+
+		@media (max-width:  768px){
+			flex-direction: column;
+		}
+	}
+
+	.banner-article {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		padding-block: 80px;
+
+		@media (max-width:  768px){
+			padding-block: 40px;
+		}
+
+
+		&-title {
+			font-size: var(--xl-font-size);
+			font-weight: 500;
+			line-height: 1;
+			margin-bottom: 20px;
+			color: var(--color-accent);
+		}
+
+		&-links{
+			max-height: 40px;
+			display: flex;
+			gap : 20px;
+
+			a{
+				height: 100%;
+				width: auto;
+				cursor: pointer;
+				img{
+					height: 100%;
+					width: auto;
+				}
+			}
+
+			@media (max-width:  768px){
+				justify-content: center;
+			}
+		}
+
+		.typo {
+			font-size: var(--xs-font-size);
+			font-weight: 400;
+			z-index: 100;
+			max-width: 350px;
+			margin-bottom: 40px;
+
+			@media (max-width:  768px){
+				max-width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.banner-image {
+		flex: 1;
+		height: auto;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: 400px;
+			object-fit: contain;
+			object-position: center top;
+			margin-right: 10%;
+			margin-bottom: -35%;
+			@media (max-width:  768px){
+				max-width: 100%;
+				margin-bottom: -25%;
+				margin-right: 0;
+			}
+		}
+	}
+
+	.banner-decor {
+		position: absolute;
+		top: -10%;
+		left: 70%;
+		rotate: 45deg;
+		color: var(--color-accent);
+
+		@media (max-width:  1024px){
+			display: none;
+		}
+	}
+}
