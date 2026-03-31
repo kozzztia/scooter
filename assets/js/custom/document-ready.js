@@ -50,5 +50,12 @@
             });
         }
 
+
+        if ($('.customBlock .animate').length) {
+            $('.animate').each(function () {
+                initAnimation($(this));
+            });
+        }
+
     });
 })(jQuery);

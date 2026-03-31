@@ -23,7 +23,6 @@ function navigationToggle(el) {
     });
 }
 
-
 function initSlider(el) {
     if (!el) return;
     new Swiper(el, {
@@ -49,4 +48,24 @@ function initSlider(el) {
             },
         },
     });
+}
+
+// show tracking
+function initAnimation(el) {
+    if (!el) return;
+
+    const domEl = el[0];
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+            }
+        });
+    }, {
+
+        threshold: 0.1,
+    });
+
+    observer.observe(domEl);
 }

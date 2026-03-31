@@ -2,53 +2,54 @@
 
 {% block block %}
 
+{% if fields is defined and fields %}
 <div class="question-section {% if fields.class %}{{ fields.class }}{% endif %}">
     <div class="question-inner question">
-        {% if  fields.title or  fields.content or fields.button %}
+    {% if  fields.title or  fields.content or fields.button %}
         <article class="question-article">
-            {% if  fields.title %}
+        {% if  fields.title %}
             <h3 class="question-title">{{ fields.title }}</h3>
-            {% endif %}
+        {% endif %}
 
-            {% if  fields.description %}
+        {% if  fields.description %}
             <div class="typo question-description">
                 {{ fields.description }}
             </div>
-            {% endif %}
+        {% endif %}
 
-            {% if  fields.button %}
-                {% include 'overall/btn.twig' with { button: fields.button, class: 'question-toggler'}%}
-            {% endif %}
+        {% if  fields.button %}
+            {% include 'overall/btn.twig' with { button: fields.button, class: 'question-toggler'}%}
+        {% endif %}
         </article>
+    {% endif %}
 
-        {% endif %}
+    {% if fields.content %}
+        <ul class="question-content ">
+            {% for item in fields.content %}
+                <li class="question-item">
+                    {% if item.subtitle %}
+                    <h4 class="question-subtitle">{{ item.subtitle }}</h4>
+                    {% endif %}
 
-        {% if fields.content %}
-            <ul class="question-content ">
-                {% for item in fields.content %}
-                    <li class="question-item">
-                        {% if item.subtitle %}
-                        <h4 class="question-subtitle">{{ item.subtitle }}</h4>
-                        {% endif %}
+                    <span class="question-thumb"></span>
 
-                        <span class="question-thumb"></span>
+                    {% if  item.content %}
+                    <div class="typo">
+                        {{ item.content }}
+                    </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
-                        {% if  item.content %}
-                        <div class="typo">
-                            {{ item.content }}
-                        </div>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-        {% if fields.decor %}
-            <svg class="question-decor">
-                <use href={{ decor_sprite }}#question_svg></use>
-            </svg>
-        {% endif %}
+    {% if fields.decor %}
+        <svg class="question-decor">
+            <use href={{ decor_sprite }}#question_svg></use>
+        </svg>
+    {% endif %}
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

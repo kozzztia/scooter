@@ -2,6 +2,7 @@
 
 {% block block %}
 
+{% if fields is defined and fields %}
 <div class="text-section {% if fields.class %}{{ fields.class }}{% endif %}">
     <div class="text-inner">
         {% if fields.title is defined and fields.title %}
@@ -14,5 +15,6 @@
         {% endif %}
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

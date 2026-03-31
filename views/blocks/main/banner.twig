@@ -4,25 +4,25 @@
 
 <div class="banner-section {% if fields.class %}{{ fields.class }}{% endif %}">
     <div class="banner-inner">
-        {% if fields.decor %}
-            <svg class="banner-decor">
-                <use href="{{ decor_sprite }}#banner_svg"></use>
-            </svg>
-        {% endif %}
+    {% if fields.decor %}
+        <svg class="banner-decor">
+            <use href="{{ decor_sprite }}#banner_svg"></use>
+        </svg>
+    {% endif %}
 
         <div class="banner-logo">
             {% include "overall/logo.twig" %}
         </div>
 
-        {% if fields.title is defined and fields.title %}
+    {% if fields.title is defined and fields.title %}
         <h3 class="banner-title">{{ fields.title }}</h3>
-        {% endif %}
+    {% endif %}
 
-        {% if fields.content is defined and fields.content %}
+    {% if fields.content is defined and fields.content %}
         <div class="typo">
             {{ fields.content|raw }}
         </div>
-        {% endif %}
+    {% endif %}
     </div>
 </div>
 

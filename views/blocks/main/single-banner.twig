@@ -2,45 +2,46 @@
 
 {% block block %}
 
+{% if fields is defined and fields %}
 <div class="single-banner-section {% if fields.class %}{{ fields.class }}{% endif %}">
     <div class="single-banner-inner">
-        {% if fields.title or fields.links or fields.content %}
+    {% if fields.title or fields.links or fields.content %}
         <div class="banner-article">
-            {% if fields.title is defined and fields.title %}
-                <h3 class="banner-article-title">{{ fields.title }}</h3>
-            {% endif %}
-
-            {% if fields.content is defined and fields.content %}
-                <div class="typo">
-                    {{ fields.content|raw }}
-                </div>
-            {% endif %}
-
-            {% if fields.links is defined and fields.links %}
-                <div class="banner-article-links">
-                    {% for link in fields.links %}
-                        <a href="{{ link.href }}">
-                            <img src="{{ link.icon }}" alt="" />
-                        </a>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
+        {% if fields.title is defined and fields.title %}
+            <h3 class="banner-article-title">{{ fields.title }}</h3>
         {% endif %}
 
-        {% if fields.img %}
+        {% if fields.content is defined and fields.content %}
+            <div class="typo">
+                {{ fields.content|raw }}
+            </div>
+        {% endif %}
+
+        {% if fields.links is defined and fields.links %}
+            <div class="banner-article-links">
+            {% for link in fields.links %}
+                <a href="{{ link.href }}">
+                    <img src="{{ link.icon }}" alt="" />
+                </a>
+            {% endfor %}
+            </div>
+        {% endif %}
+        </div>
+    {% endif %}
+
+    {% if fields.img %}
         <div class="banner-image">
             <img src="{{ fields.img }}" alt="{{ fields.title }}">
         </div>
-        {% endif %}
+    {% endif %}
 
-        {% if fields.decor %}
-            <svg class="single-banner-decor">
-                <use href="{{ decor_sprite }}#single-banner_svg"></use>
-            </svg>
-        {% endif %}
-
+    {% if fields.decor %}
+        <svg class="single-banner-decor">
+            <use href="{{ decor_sprite }}#single-banner_svg"></use>
+        </svg>
+    {% endif %}
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

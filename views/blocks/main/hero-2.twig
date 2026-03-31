@@ -2,7 +2,7 @@
 
 {% block block %}
 
-    <div class="hero-2-section">
+    <div class="hero-2-section {% if fields.class %}{{fields.class}}{% endif %}">
         <div class="hero-2-inner">
             <div class="hero-2-slider">
                 {% for slide in fields.slides %}
