@@ -29,7 +29,7 @@ function initSlider(el) {
     new Swiper(el, {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
+        loop: false,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -42,10 +42,10 @@ function initSlider(el) {
         },
         breakpoints: {
             768: {
-                slidesPerView: 2,
+                slidesPerView: 1.7,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 2.5,
             },
         },
     });

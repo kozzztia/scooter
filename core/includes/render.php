@@ -89,6 +89,7 @@ function get_context() {
     $context['request']['cookie'] = $_COOKIE;
     $context['request']['server'] = $_SERVER;
     $context['svg_sprite'] = SVG_SPRITE_URL;
+    $context['decor_sprite'] = DECOR_SPRITE_URL;
     $context['svg_folder'] = SVG_FOLDER;
     $context['img_folder'] = IMG_FOLDER;
     $context['video_folder'] = VIDEO_FOLDER;

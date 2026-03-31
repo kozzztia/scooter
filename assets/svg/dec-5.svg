@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 569.3 430.1" style="enable-background:new 0 0 569.3 430.1;" xml:space="preserve">
+<svg id="slider_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 569.3 430.1">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+    .slider_svg {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 5;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2000;
+        stroke-dashoffset: -2000;
+        animation: draw 2s linear forwards;
+    }
+
+    @keyframes draw {
+        to { stroke-dashoffset: 0; }
+    }
 </style>
-<path class="st0" d="M25.8,322.7c-55.8-145.2-4.2-280,77.2-312.4c80.1-31.8,177,40.2,222.8,97.9c80.7,101.8,86.8,265.6,24,307.5
+<path class="slider_svg" d="M25.8,322.7c-55.8-145.2-4.2-280,77.2-312.4c80.1-31.8,177,40.2,222.8,97.9c80.7,101.8,86.8,265.6,24,307.5
 	c-28.8,19.2-73.8,14.1-99-7.5c-40.9-35-29-112.8-1.5-159c41.5-69.6,125.3-79.3,153-82.5c38.5-4.5,86.7-10,111,18
 	c29.2,33.6-2.5,85,33,159c7.6,15.8,15.8,27.6,21,34.5"/>
 </svg>

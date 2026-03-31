@@ -25,6 +25,12 @@
             <div class="swiper-button-next next"></div>
         </div>
     {% endif %}
+
+    {% if fields.decor %}
+        <svg class="slider-decor">
+            <use href={{ decor_sprite }}#slider_svg></use>
+        </svg>
+    {% endif %}
     </div>
 </div>
 

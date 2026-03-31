@@ -19,13 +19,13 @@
 	.cards-decor{
 		position: absolute;
 		color: var(--color-accent);
-		top: 0;
-		left: 0;
-		translate: -50% 30%;
-		width : 600px;
-		height : auto;
-		rotate: 45deg;
+		top: 18%;
+		left:  -10%;
+		rotate: 75deg;
 		z-index: 1;
+		scale:  2;
+		width : 200px;
+		height: auto;
 
 		@media (max-width: 1024px){
 			display: none;

@@ -18,7 +18,7 @@
 		}
 	}
 
-	.tab-decor-1 {
+	.tab-decor {
 		position: absolute;
 		z-index: -1;
 		top: 10%;
@@ -27,29 +27,6 @@
 		color: var(--color-accent);
 		@media (max-width: 1024px) {
 			display: none;
-			//width: 100%;
-			//top : 0;
-			//left: 20%;
-			//scale: 1.5;
-			//z-index: -1;
-		}
-	}
-
-	.tab-decor-2 {
-		position: absolute;
-		z-index: -1;
-		top: 25%;
-		rotate: 25deg;
-		left: -10%;
-		width: 120%;
-		color: var(--color-accent);
-		@media (max-width: 1024px) {
-			display: none;
-			//width: 100%;
-			//top : 0;
-			//left: 20%;
-			//scale: 1.5;
-			//z-index: -1;
 		}
 	}
 
@@ -139,13 +116,13 @@
 
 				label[for$='-2'] {
 					width: calc(33% - 10px);
+					margin-left: 20px;
 					opacity: 1;
-					margin-left : 20px;
 				}
 
-				label[for$='-3'],label[for$='-4'] {
-					width: 0;
+				label[for$='-3'], label[for$='-4'] {
 					visibility: hidden;
+					width: 0;
 				}
 			}
 		}
@@ -167,19 +144,19 @@
 				label[for$='-2'] {
 					width: calc(67% - 10px);
 					height: 100%;
-					scale: 1;
 					opacity: 1;
+					scale: 1;
 				}
 
 				label[for$='-3'] {
 					width: calc(33% - 10px);
-					margin-left : 20px;
+					margin-left: 20px;
 					opacity: 1;
 				}
 
 				label[for$='-4'], label[for$='-1'] {
-					width: 0;
 					visibility: hidden;
+					width: 0;
 				}
 			}
 		}
@@ -201,34 +178,31 @@
 				label[for$='-3'] {
 					width: calc(67% - 10px);
 					height: 100%;
+					opacity: 1;
 					scale: 1;
-					opacity: 1;
 				}
 
-				label[for$='-1']{
+				label[for$='-1'] {
 					width: calc(33% - 10px);
-					margin-right : 20px;
+					margin-right: 20px;
 					opacity: 1;
 				}
 
-				label[for$='-2']{
-					width: 0;
+				label[for$='-2'] {
 					visibility: hidden;
+					width: 0;
 				}
 
-
-
-				&:has(label[for$='-4']){
-
+				&:has(label[for$='-4']) {
 					label[for$='-4'] {
 						width: calc(33% - 10px);
-						margin-left : 20px;
+						margin-left: 20px;
 						opacity: 1;
 					}
 
 					label[for$='-1'] {
-						width: 0;
 						visibility: hidden;
+						width: 0;
 					}
 				}
 			}
@@ -257,15 +231,15 @@
 
 				label[for$='-1'] {
 					width: calc(33% - 10px);
-					opacity: 1;
 					height: 70%;
-					margin-right : 20px;
+					margin-right: 20px;
+					opacity: 1;
 				}
 
-				label[for$='-2'],label[for$='-3'] {
+				label[for$='-2'], label[for$='-3'] {
+					visibility: hidden;
 					width: 0;
 					opacity: 0;
-					visibility: hidden;
 				}
 			}
 		}

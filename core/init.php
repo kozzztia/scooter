@@ -31,7 +31,8 @@ const HTML_LOC = 'en-US';
 define("DATE_NOW", date('Ymd_Hi'));
 //--------------------------------------------------------
 const ASSETS_VERSION = '1.0.0-date-' . DATE_NOW;
-define('SVG_SPRITE_URL', HOME_URL . 'assets/svg/sprite.svg?ver=' . ASSETS_VERSION);
+const SVG_SPRITE_URL = HOME_URL . 'assets/svg/sprite.svg?ver=' . ASSETS_VERSION;
+const DECOR_SPRITE_URL = HOME_URL . 'assets/svg/decor-sprite.svg?ver=' . ASSETS_VERSION;
 const SVG_FOLDER = HOME_URL . 'assets/svg/';
 const IMG_FOLDER = HOME_URL . 'assets/img/';
 const VIDEO_FOLDER = HOME_URL . 'assets/video/';

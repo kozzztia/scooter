@@ -7,6 +7,7 @@
 	.slider-inner {
 		max-width: var(--primary-block-width);
 		margin-inline: auto;
+		position: relative;
 	}
 
 	.slider {
@@ -171,6 +172,22 @@
 		}
 
 		.typo {
+		}
+	}
+
+	.slider-decor{
+		position: absolute;
+		bottom: -10%;
+		width: 50%;
+		height: auto;
+		left: -35%;
+		scale : 1.5;
+		color: var(--color-accent);
+		rotate: -70deg;
+		z-index: -1;
+
+		@media (max-width: 1024px) {
+			display: none;
 		}
 	}
 }

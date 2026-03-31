@@ -93,12 +93,15 @@
 		}
 	}
 
-	.banner-decor {
+	.single-banner-decor {
 		position: absolute;
-		top: -10%;
-		left: 70%;
-		rotate: 45deg;
+		width : 200px;
+		height: auto;
+		top: -8%;
+		left: 80%;
+		rotate: 30deg;
 		color: var(--color-accent);
+		scale: 2;
 
 		@media (max-width:  1024px){
 			display: none;
