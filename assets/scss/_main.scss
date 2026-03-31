@@ -581,6 +581,23 @@ a {
 	}
 }
 
-.animate{
+.top{
+	padding-top: var(--header-height);
+}
 
+.animate{
+	opacity: 0;
+	transform: translateY(45px);
+	transition: transform .2s;
+
+
+	&.is-show {
+		.svg{animation: draw 2s linear forwards .3s;}
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@keyframes draw {
+		to { stroke-dashoffset: 0; }
+	}
 }

@@ -25,6 +25,17 @@
 		left: -10%;
 		width: 120%;
 		color: var(--color-accent);
+
+		.tab_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 5;
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 4800;
+			stroke-dashoffset: 4800;
+		}
+
 		@media (max-width: 1024px) {
 			display: none;
 		}

@@ -85,6 +85,16 @@
 		@media (max-width: 1024px) {
 			display: none;
 		}
+
+		.banner_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 5;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 5000;
+			stroke-dashoffset: 5000;
+		}
 	}
 
 	&.about {

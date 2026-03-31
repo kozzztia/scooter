@@ -300,11 +300,21 @@
 	.hero-3-decor {
 		position: absolute;
 		top: 22%;
-		left: -13%;
+		left: -17%;
 		width: auto;
 		height: 60%;
 		rotate: 45deg;
 		color: var(--color-accent);
+
+		.hero-3_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 6;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 3000;
+			stroke-dashoffset: -3000;
+		}
 
 		@media (max-width: 1024px) {
 			display: none;

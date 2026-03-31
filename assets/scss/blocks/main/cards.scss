@@ -19,13 +19,23 @@
 	.cards-decor{
 		position: absolute;
 		color: var(--color-accent);
-		top: 18%;
-		left:  -10%;
-		rotate: 75deg;
+		top: 50%;
+		left:  -15%;
+		rotate: -99deg;
 		z-index: 1;
 		scale:  2;
-		width : 200px;
+		width : 20%;
 		height: auto;
+
+		.cards_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 5;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 3000;
+			stroke-dashoffset: -3000;
+		}
 
 		@media (max-width: 1024px){
 			display: none;
