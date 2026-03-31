@@ -1,0 +1,53 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    <div class="hero-3-section">
+        <div class="hero-3-inner">
+            {% if fields.decor %}
+                <svg class="hero-3-decor">
+                    <use href="{{ decor_sprite }}#question_svg"></use>
+                </svg>
+            {% endif %}
+            <div class="hero-3-slider">
+                {% for slide in fields.slides %}
+                    <div class="hero-slide">
+                        <img src="{{ slide.img }}" alt="{{ slide.role }}">
+                        {% if slide.title or slide.description %}
+                        <div class="hero-slide-description">
+                            <span class="hero-slide-title">{{ slide.title }}</span>
+                            {{ slide.description }}
+                        </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="hero-3-article">
+                {% if fields.title is defined and fields.title %}
+                    <h2 class="hero-title">
+                        {{ fields.title|raw }}
+                        {% if fields.cost is defined and fields.cost %}
+                            <span class="hero-cost">{{ fields.cost|raw }}</span>
+                        {% endif %}
+                    </h2>
+                {% endif %}
+
+                {% if fields.slides is defined and fields.slides %}
+                    <label class="hero-actions"> <input type="checkbox"> <span class="thumb"></span>
+                        {% for button in fields.slides %}
+                        <span class="hero-btn">
+                            {{ button.role }}
+                        </span>
+                        {% endfor %}
+                    </label>
+                {% endif %}
+
+
+                {% if  fields.button %}
+                    {% include 'overall/btn.twig' with { button: fields.button, class: 'buy-toggler'} %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

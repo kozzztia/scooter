@@ -5,11 +5,11 @@
     <div class="hero-2-section">
         <div class="hero-2-inner">
             <div class="hero-2-slider">
-                {% for button in fields.buttons %}
+                {% for slide in fields.slides %}
                     <div class="hero-slide">
-                        <img src="{{ button.img }}" alt="{{ button.role }}">
+                        <img src="{{ slide.img }}" alt="{{ slide.role }}">
 
-                        {% if button.decor %}
+                        {% if slide.decor %}
                             <svg class="hero-2-decor">
                                 <use href="{{ decor_sprite }}#hero-2_svg"></use>
                             </svg>
@@ -26,11 +26,11 @@
                     <p class="hero-description typo">{{ fields.description|raw }}</p>
                 {% endif %}
 
-                {% if fields.buttons is defined and fields.buttons %}
+                {% if fields.slides is defined and fields.slides %}
                     <label class="hero-actions">
                         <input type="checkbox">
                         <span class="thumb"></span>
-                        {% for button in fields.buttons %}
+                        {% for button in fields.slides %}
                             <span class="hero-btn">
                                 {{ button.role }}
                             </span>

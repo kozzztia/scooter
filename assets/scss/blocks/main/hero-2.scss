@@ -55,7 +55,7 @@
 
 			&:nth-child(1) {
 				display: block;
-				animation: slide-left .1s ease both;
+				animation: hero-2-left .1s ease both;
 				@media (max-width: 768px) {
 					animation: slide-left-mob .1s ease both;
 				}
@@ -63,7 +63,7 @@
 
 			&:nth-child(2) {
 				display: none;
-				animation: slide-right .3s ease both;
+				animation: hero-2-right .3s ease both;
 				@media (max-width: 768px) {
 					animation: slide-right-mob .3s ease both;
 				}
@@ -80,7 +80,6 @@
 	}
 
 	.hero-2-article {
-		font-weight: 600;
 		position: absolute;
 		top: 0;
 		max-width: 80%;
@@ -89,6 +88,7 @@
 		}
 
 		.hero-title {
+			font-weight: 600;
 			font-size: var(--xxl-font-size);
 			line-height: 1;
 			margin-bottom: clamp(20px, 2vw, 30px);
@@ -98,6 +98,7 @@
 		}
 
 		.hero-description {
+			font-weight: 600;
 			font-size: var(--l-font-size);
 			line-height: 1.2;
 			max-width: 40%;
@@ -120,7 +121,7 @@
 			border: 1px solid var(--color-white);
 			border-radius: 50px;
 			@media (max-width: 768px) {
-				margin-inline: auto;
+				max-width: 100%;
 			}
 
 			input {
@@ -158,6 +159,7 @@
 			}
 
 			.thumb {
+				display: block;
 				position: absolute;
 				z-index: 1;
 				top: 0;
@@ -215,20 +217,64 @@
 			.hero-slide {
 				&:nth-child(2) {
 					display: block;
-					animation: slide-left .3s ease both;
+					animation: hero-2-left .3s ease both;
 					@media (max-width: 768px) {
-						animation: slide-left-mob .3s ease both;
+						animation: hero-2-left-mob .3s ease both;
 					}
 				}
 
 				&:nth-child(1) {
 					display: none;
-					animation: slide-right .1s ease both;
+					animation: hero-2-right .1s ease both;
 					@media (max-width: 768px) {
-						animation: slide-right-mob .1s ease both;
+						animation: hero-2-right-mob .1s ease both;
 					}
 				}
 			}
+		}
+	}
+
+	@keyframes hero-2-right {
+		from {
+			opacity: 1;
+			transform: translateX(35%) scale(1.3);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(65%) scale(1.3);
+		}
+	}
+
+	@keyframes hero-2-left {
+		from {
+			opacity: 0;
+			transform: translateX(65%) scale(1.3);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(35%) scale(1.3);
+		}
+	}
+
+	@keyframes hero-2-right-mob {
+		from {
+			opacity: 1;
+			transform: translateX(20%) scale(1.8);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(45%) scale(1.8);
+		}
+	}
+
+	@keyframes hero-2-left-mob {
+		from {
+			opacity: 0;
+			transform: translateX(45%) scale(1.8);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-20%) scale(1.8);
 		}
 	}
 }

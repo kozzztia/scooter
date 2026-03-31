@@ -31,49 +31,7 @@
 	}
 }
 
-@keyframes slide-right {
-	from {
-		opacity: 1;
-		transform: translateX(35%) scale(1.3);
-	}
-	to {
-		opacity: 0;
-		transform: translateX(65%) scale(1.3);
-	}
-}
 
-@keyframes slide-left {
-	from {
-		opacity: 0;
-		transform: translateX(65%) scale(1.3);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(35%) scale(1.3);
-	}
-}
-
-@keyframes slide-right-mob {
-	from {
-		opacity: 1;
-		transform: translateX(20%) scale(1.8);
-	}
-	to {
-		opacity: 0;
-		transform: translateX(45%) scale(1.8);
-	}
-}
-
-@keyframes slide-left-mob {
-	from {
-		opacity: 0;
-		transform: translateX(45%) scale(1.8);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(-20%) scale(1.8);
-	}
-}
 
 
 

@@ -14,7 +14,7 @@ main {
 	background-size: auto;
 	@media (max-width: 1024px) {
 		background-position: center top -400px;
-		background-size: auto 100%;
+		background-size: contain;
 	}
 	overflow: clip;
 }
@@ -43,7 +43,17 @@ body {
 	&.headroom--not-top {
 		.header {
 			@include transition(background-color .3s ease);
-			background-color: rgba(var(--color-white-rgb), 0.01);
+			overflow: hidden;
+
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				inset : 0;
+				backdrop-filter: blur(10px);
+				background-color: rgba(var(--color-white-rgb), 0.05);
+				z-index: -1;
+			}
 		}
 	}
 
@@ -179,7 +189,7 @@ a {
 		}
 
 		span:before {
-			top: -7px;
+			top: -8px;
 			content: '';
 		}
 
@@ -545,6 +555,7 @@ a {
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1;
+	height: 54px;
 	position: relative;
 	flex-shrink: 0;
 	padding: 15px 25px;
@@ -553,6 +564,7 @@ a {
 	border-radius: 50px;
 	background-color: var(--color-white);
 	@include transition(background-color .2s ease, color .2s ease);
+	min-width: 160px;
 	span{
 		text-align: center;
 		width: 100%;

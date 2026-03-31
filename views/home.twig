@@ -9,7 +9,7 @@
             'style': 'margin-bottom: 50px;',
             'title': 'Stylish electric scooter with a powerful battery',
             'description': 'Improved performance for long-distance travel. It works as simply as it looks.',
-            'buttons': [
+            'slides': [
                 {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp', 'decor': true},
                 {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp', 'decor': true},
             ]
@@ -111,6 +111,7 @@
             'name': 'banner',
             'fields': {
             'style': 'margin-bottom: 50px;',
+            'decor': true,
             'class': 'about',
             'title': 'About the Xiaomi brand',
             'content': 'Xiaomi was founded by entrepreneur Lei Jun in 2010 under the motto "Innovation for Everyone." We believe that high-quality products and advanced technologies should be accessible to everyone.',
@@ -156,8 +157,8 @@
         {
             'name': 'question',
             'fields': {
-            'style': 'margin-bottom: 50px;',
-            'class': 'accented',
+            'style': 'margin-bottom: 70px;',
+            'class': '',
             'decor': true,
             'title': 'Frequently Asked Questions',
             'description': '<p>All your frequently asked questions about the Mi Scooter Pro 2 electric scooter.</p>
@@ -174,6 +175,41 @@
                 {'subtitle':  'Is this the China or Europe version?', 'content': 'This is the European version, with all updates and a European plug.'},
 
             ]
+        }
+        },
+
+        {
+            'name': 'hero-3',
+            'fields': {
+            'style': '',
+            'decor': true,
+            'title': 'Mi Electric Scooter Pro 2',
+            'cost': '54 990 $',
+            'slides': [
+                {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp', 'title': 'Scope of delivery',
+                    'description': '<p>Power adapter</p>
+                                    <p>Hex key</p>
+                                    <p>Pump extension</p>
+                                    <p>Screws x 5</p>
+                                    <p>Spare tire</p>
+                                    <p>User manual</p>
+                                    <p>Information booklet</p>'
+                },
+                {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp', 'title': 'Scope of delivery',
+                    'description': '<p>Power adapter</p>
+                                    <p>Hex key</p>
+                                    <p>Pump extension</p>
+                                    <p>Screws x 5</p>
+                                    <p>Spare tire</p>
+                                    <p>User manual</p>
+                                    <p>Information booklet</p>'
+                },
+            ],
+            'button': {
+                'title': 'Buy',
+                'type': 'button',
+                'label': 'Toggle buy popup',
+            },
         }
         },
     ] %}
