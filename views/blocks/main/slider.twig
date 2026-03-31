@@ -16,10 +16,9 @@
         </div>
 
         <div class="slider-nav">
-            <button class="review-toggler" type="button" aria-label="Toggle review popup">
-                <span>Leave feedback</span>
-            </button>
-
+            {% if  fields.button %}
+                {% include 'overall/btn.twig' with { button: fields.button, class: 'review-toggler'}%}
+            {% endif %}
             <div class="swiper-pagination bullets"></div>
             <div class="swiper-button-prev prev"></div>
             <div class="swiper-button-next next"></div>

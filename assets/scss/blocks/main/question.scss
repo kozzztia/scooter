@@ -10,11 +10,36 @@
 	    margin-bottom: 24px;
     }
 
-    .question-title{
-        font-size: var(--xl-font-size);
-        font-weight: 500;
-	    line-height: 1;
-    }
+	.question{
+		display: flex;
+		gap : 40px;
+
+		@media (max-width: 1024px){
+			flex-direction: column;
+		}
+		&-article{
+			flex : 0.8;
+			
+		}
+		&-content{
+			flex : 1;
+		}
+
+		&-title{
+			font-size: var(--xl-font-size);
+			font-weight: 500;
+			line-height: 1.1;
+			color: var(--color-accent);
+		}
+
+		&-subtitle{
+			font-size: var(--m-font-size);
+			font-weight: 600;
+			line-height: 1.2;
+		}
+	}
+
+
 
 
 }

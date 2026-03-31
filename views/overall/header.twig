@@ -17,8 +17,13 @@
             <span></span>
         </button>
 
-        <button class="buy-toggler" type="button" aria-label="Toggle buy popup">
-            <span>buy</span>
-        </button>
+        {% include "overall/btn.twig" with {
+            class: 'buy-toggler',
+            button: {
+                type: 'butoon',
+                label: 'Toggle buy popup',
+                title: 'Buy',
+            }
+        }%}
     </div>
 </header>

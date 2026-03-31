@@ -3,10 +3,45 @@
 {% block block %}
 
 <div class="question-section {% if fields.class %}{{ fields.class }}{% endif %}">
-    <div class="question-inner">
-    {% if fields.title is defined and fields.title %}
-        {{ fields.title }}
-    {% endif %}
+    <div class="question-inner question">
+        {% if  fields.title or  fields.content or fields.button %}
+        <article class="question-article">
+            {% if  fields.title %}
+            <h3 class="question-title">{{ fields.title }}</h3>
+            {% endif %}
+
+            {% if  fields.description %}
+            <div class="typo">
+                {{ fields.description }}
+            </div>
+            {% endif %}
+
+            {% if  fields.button %}
+                {% include 'overall/btn.twig' with { button: fields.button, class: 'question-toggler'}%}
+            {% endif %}
+        </article>
+
+        {% endif %}
+
+        {% if fields.content %}
+            <ul class="question-content ">
+                {% for item in fields.content %}
+                    <li class="question-item">
+                        {% if item.subtitle %}
+                        <h4 class="question-subtitle">{{ item.subtitle }}</h4>
+                        {% endif %}
+
+                        {% if  item.content %}
+                        <div class="typo">
+                            {{ item.content }}
+                        </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
     </div>
 </div>
 

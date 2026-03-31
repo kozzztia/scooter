@@ -88,29 +88,7 @@
 			}
 
 			.review-toggler {
-				font-family: 'Gilroy', sans-serif;
-				font-size: 16px;
-				font-weight: 700;
-				line-height: 1;
-				position: relative;
-				flex-shrink: 0;
 				margin-right: auto;
-				padding: 15px 25px;
-				cursor: pointer;
-				border: none;
-				border-radius: 50px;
-				background-color: var(--color-white);
-				@include transition(background-color .2s ease, color .2s ease);
-
-				&:hover {
-					color: var(--color-white);
-					background-color: var(--color-accent);
-				}
-
-				@media (max-width: 768px) {
-					width: 100%;
-					margin-right: 0;
-				}
 			}
 
 			@media (max-width: 768px) {
