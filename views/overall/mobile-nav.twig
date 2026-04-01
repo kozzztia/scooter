@@ -4,4 +4,13 @@
         <li class="menu-item"><a href="#">Services</a></li>
         <li class="menu-item"><a href="#">Contact</a></li>
     </ul>
+
+    {% include "overall/btn.twig" with {
+        class: 'buy-toggler',
+        button: {
+            type: 'butoon',
+            label: 'Toggle buy popup',
+            title: 'Buy',
+        }
+    }%}
 </nav>

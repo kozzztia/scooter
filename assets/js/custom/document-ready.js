@@ -56,6 +56,11 @@
                 initAnimation($(this));
             });
         }
+        if ($('.customBlock .tab').length) {
+            $('.tab').each(function () {
+                initTabAutoClicker($(this));
+            });
+        }
 
     });
 })(jQuery);

@@ -66,8 +66,32 @@ function initAnimation(el) {
         });
     }, {
 
-        threshold: 0.1,
+        threshold: [0.1, 0.1],
     });
 
     observer.observe(domEl);
+}
+
+function initTabAutoClicker(el) {
+    const radio = el.find("[type='radio']");
+    let current = 0;
+    let interval;
+
+    function start() {
+        interval = setInterval(() => {
+            current = (current + 1) % radio.length;
+            $(radio[current]).prop('checked', true).trigger('change');
+        }, 3000);
+    }
+
+    function stop() {
+        clearInterval(interval);
+    }
+
+    $(radio[current]).prop('checked', true).trigger('change');
+
+    start();
+
+    el.on('mouseenter', stop);
+    el.on('mouseleave', start);
 }

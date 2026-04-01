@@ -255,6 +255,8 @@ a {
 	background-color: var(--background-color);
 	@include transition(top .3s ease, opacity .1s ease);
 	opacity: 0;
+	display: flex;
+	flex-direction: column;
 
 	.menu {
 		list-style: none;
@@ -276,6 +278,10 @@ a {
 				}
 			}
 		}
+	}
+
+	.btn{
+		margin-top: auto;
 	}
 }
 
