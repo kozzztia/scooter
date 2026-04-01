@@ -102,13 +102,37 @@ function initPopupButtons(btn) {
 
     if (btn.hasClass('buy-toggler')) {
         btn.on('click', function () {
-            $('.popupWrapper').toggleClass('show-popup');
+            $('.buy-popup-wrapper').toggleClass('show-popup');
         });
     }
 
     if (btn.hasClass('close-buy-popup')) {
         btn.on('click', function () {
-            $('.popupWrapper').removeClass('show-popup');
+            $('.buy-popup-wrapper').removeClass('show-popup');
+        });
+    }
+
+    if (btn.hasClass('feedback-toggler')) {
+        btn.on('click', function () {
+            $('.feedback-popup-wrapper').toggleClass('show-popup');
+        });
+    }
+
+    if (btn.hasClass('close-feedback-popup')) {
+        btn.on('click', function () {
+            $('.feedback-popup-wrapper').removeClass('show-popup');
+        });
+    }
+
+    if (btn.hasClass('question-toggler')) {
+        btn.on('click', function () {
+            $('.question-popup-wrapper').toggleClass('show-popup');
+        });
+    }
+
+    if (btn.hasClass('close-question-popup')) {
+        btn.on('click', function () {
+            $('.question-popup-wrapper').removeClass('show-popup');
         });
     }
 
@@ -137,6 +161,66 @@ function initPopupButtons(btn) {
                 console.log('Form data:', data);
 
                 $('.popupWrapper').removeClass('show-popup');
+                $form[0].reset();
+            }
+        });
+    }
+
+    if (btn.hasClass('submit-feedback-popup')) {
+        btn.on('click', function (e) {
+            e.preventDefault();
+            const $form = btn.closest('.form');
+            let valid = true;
+
+            $form.find('[required]').each(function () {
+                const $field = $(this);
+                $field.removeClass('error');
+
+                if (!$field.val().trim()) {
+                    $field.addClass('error');
+                    valid = false;
+                }
+            });
+
+            if (valid) {
+                const data = {};
+                $form.find('[name]').each(function () {
+                    data[$(this).attr('name')] = $(this).val();
+                });
+
+                console.log('Feedback data:', data);
+
+                $('.feedback-popup-wrapper').removeClass('show-popup');
+                $form[0].reset();
+            }
+        });
+    }
+
+    if (btn.hasClass('submit-question-popup')) {
+        btn.on('click', function (e) {
+            e.preventDefault();
+            const $form = btn.closest('.form');
+            let valid = true;
+
+            $form.find('[required]').each(function () {
+                const $field = $(this);
+                $field.removeClass('error');
+
+                if (!$field.val().trim()) {
+                    $field.addClass('error');
+                    valid = false;
+                }
+            });
+
+            if (valid) {
+                const data = {};
+                $form.find('[name]').each(function () {
+                    data[$(this).attr('name')] = $(this).val();
+                });
+
+                console.log('Question data:', data);
+
+                $('.question-popup-wrapper').removeClass('show-popup');
                 $form[0].reset();
             }
         });
