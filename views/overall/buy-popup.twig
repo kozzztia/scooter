@@ -1,0 +1,57 @@
+<div class="popupWrapper buy-popup-wrapper">
+    <div class="buy-popup">
+
+        <div class="popup-product">
+            <div class="popup-product-img">
+                <img src="/assets/img/hero-bike-1.webp" alt="Mi Electric Scooter Pro 2">
+            </div>
+            <div class="popup-product-info">
+                <p class="name">Mi Electric Scooter Pro 2</p>
+                <p class="price">54 990 ₽</p>
+            </div>
+        </div>
+
+        <form class="form" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="buy_name">Name</label>
+                    <input type="text" id="buy_name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="buy_phone">Phone</label>
+                    <input type="tel" id="buy_phone" name="phone" placeholder="+3 800 000 00 00" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="buy_color">Color</label>
+                <select id="buy_color" name="color">
+                    <option value="" disabled selected>Choose color</option>
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                </select>
+            </div>
+            <div class="form-actions">
+
+                {% include "overall/btn.twig" with {
+                    class: 'close-buy-popup',
+                    button: {
+                        type: 'button',
+                        label: 'cancel buy popup',
+                        title: 'Cancel',
+                    }
+                }%}
+
+
+                {% include "overall/btn.twig" with {
+                    class: 'submit-buy-popup',
+                    button: {
+                        type: 'submit',
+                        label: 'submit buy popup',
+                        title: 'Order now',
+                    }
+                }%}
+
+            </div>
+        </form>
+    </div>
+</div>

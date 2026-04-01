@@ -12,6 +12,12 @@
             }
         });
 
+        if($('.btn').length){
+            $('.btn').each(function () {
+                initPopupButtons($(this));
+            });
+        }
+
         /** navigation toggle */
         if($('.header').length){
             $('.header').each(function(){
@@ -50,17 +56,18 @@
             });
         }
 
-
         if ($('.customBlock .animate').length) {
             $('.animate').each(function () {
                 initAnimation($(this));
             });
         }
+
         if ($('.customBlock .tab').length) {
             $('.tab').each(function () {
                 initTabAutoClicker($(this));
             });
         }
+
 
     });
 })(jQuery);

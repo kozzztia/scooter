@@ -247,58 +247,6 @@
 }
 
 /* buttons */
-.btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid transparent;
-    @include border-radius(6px);
-    @include transition(all .2s ease);
-    cursor: pointer;
-    line-height: 1.4;
-
-    &.primary{
-        background-color: var(--color-dark);
-        border-color: var(--color-dark);
-        color: var(--color-white);
-
-        &:hover{
-            background-color: transparent;
-            color: var(--color-dark);
-        }
-    }
-
-    &.secondary{
-        background-color: transparent;
-        border-color: var(--color-dark);
-        color: var(--color-dark);
-
-        &:hover{
-            background-color: var(--color-dark);
-            color: var(--color-white);
-        }
-    }
-
-    &.accent{
-        background-color: var(--color-accent);
-        border-color: var(--color-accent);
-        color: var(--color-white);
-
-        &:hover{
-            background-color: transparent;
-            color: var(--color-accent);
-        }
-    }
-
-    @media (max-width: 768px) {
-        padding: 10px 22px;
-        font-size: 14px;
-    }
-}
 
 .visually-hidden{
     position: absolute;
