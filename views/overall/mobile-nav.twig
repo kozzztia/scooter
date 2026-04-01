@@ -1,8 +1,6 @@
 <nav class="mobile-nav">
     <ul class="menu">
-        <li class="menu-item"><a href="#">About</a></li>
-        <li class="menu-item"><a href="#">Services</a></li>
-        <li class="menu-item"><a href="#">Contact</a></li>
+        {% include "overall/menu-items.twig" %}
     </ul>
 
     {% include "overall/btn.twig" with {

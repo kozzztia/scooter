@@ -3,7 +3,7 @@
 {% block block %}
 
 {% if fields is defined and fields %}
-<div class="tab-section {% if fields.class %}{{ fields.class }}{% endif %}">
+<div class="tab-section {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.id %} id="{{ fields.id }}" {% endif %}>
     <div class="tab-inner">
         {% if fields.decor %}
             <svg class="tab-decor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1954.2 790.7" fill="none">

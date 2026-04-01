@@ -2,12 +2,16 @@
 
 .slider-section {
 	color: var(--color-white);
+	scroll-margin-top: var(--header-height);
 	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
 	.slider-inner {
+		position: relative;
 		max-width: var(--primary-block-width);
 		margin-inline: auto;
-		position: relative;
 	}
 
 	.slider {
@@ -153,16 +157,16 @@
 		}
 	}
 
-	.slider-decor{
+	.slider-decor {
 		position: absolute;
+		z-index: -1;
 		bottom: -10%;
+		left: -30%;
 		width: auto;
 		height: 300px;
-		left: -30%;
-		scale : 1;
 		color: var(--color-accent);
+		scale: 1;
 		rotate: -70deg;
-		z-index: -1;
 
 		.slider_svg {
 			fill: none;

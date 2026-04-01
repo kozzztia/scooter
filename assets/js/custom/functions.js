@@ -18,6 +18,10 @@ function navigationToggle(el) {
         $("body").toggleClass("show-nav");
     });
 
+    $('.mobile-nav .menu-item a, .header .custom-logo-link').on('click', function () {
+        $('body').removeClass('show-nav');
+    });
+
     window.addEventListener("resize", function () {
         $('body').removeClass("show-nav");
     });
@@ -60,13 +64,11 @@ function initAnimation(el) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
-            }else{
-                entry.target.classList.remove('is-show');
             }
         });
     }, {
 
-        threshold: [0.1, 0.3],
+        threshold: 0.1,
     });
 
     observer.observe(domEl);

@@ -3,7 +3,7 @@
 {% block block %}
 
 {% if fields is defined and fields %}
-<div class="question-section {% if fields.class %}{{ fields.class }}{% endif %}">
+<div class="question-section {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.id %} id="{{ fields.id }}" {% endif %}>
     <div class="question-inner question">
     {% if  fields.title or  fields.content or fields.button %}
         <article class="question-article">

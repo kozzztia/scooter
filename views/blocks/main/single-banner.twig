@@ -3,7 +3,7 @@
 {% block block %}
 
 {% if fields is defined and fields %}
-<div class="single-banner-section {% if fields.class %}{{ fields.class }}{% endif %}">
+<div class="single-banner-section {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.id %} id="{{ fields.id }}" {% endif %}>
     <div class="single-banner-inner">
     {% if fields.title or fields.links or fields.content %}
         <div class="banner-article">

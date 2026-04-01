@@ -1,7 +1,11 @@
 @use '../../mixins' as *;
 
 .hero-3-section {
+	scroll-margin-top: var(--header-height);
 	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
 	.hero-3-inner {
 		position: relative;

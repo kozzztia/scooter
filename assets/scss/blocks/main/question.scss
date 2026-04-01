@@ -2,7 +2,11 @@
 
 .question-section {
 	color: var(--color-white);
+	scroll-margin-top: var(--header-height);
 	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
 	.question-inner {
 		max-width: var(--primary-block-width);
@@ -68,16 +72,16 @@
 			flex-direction: column;
 		}
 
-		&-decor{
+		&-decor {
 			position: absolute;
+			z-index: -1;
+			right: 0;
 			bottom: -50%;
 			width: auto;
 			height: 400px;
-			right:0;
-			scale : 1.1;
 			color: var(--color-accent);
+			scale: 1.1;
 			rotate: -45deg;
-			z-index: -1;
 
 			.question_svg {
 				fill: none;

@@ -1,31 +1,35 @@
 @use '../../mixins' as *;
 
-.cards-section{
-    padding-inline: var(--block-side-padding);
+.cards-section {
 	color: var(--color-white);
+	scroll-margin-top: var(--header-height);
+	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
-    .cards-inner{
-        max-width: var(--primary-block-width);
-        margin-inline: auto;
-	    display: flex;
-	    align-items: stretch;
-	    gap : 20px;
-	    position: relative;
+	.cards-inner {
+		position: relative;
+		display: flex;
+		align-items: stretch;
+		max-width: var(--primary-block-width);
+		margin-inline: auto;
+		gap: 20px;
+		@media (max-width: 1024px) {
+			flex-direction: column;
+		}
+	}
 
-	    @media (max-width: 1024px){
-		    flex-direction: column;
-	    }
-    }
-	.cards-decor{
+	.cards-decor {
 		position: absolute;
-		color: var(--color-accent);
-		top: 50%;
-		left:  -15%;
-		rotate: -99deg;
 		z-index: 1;
-		scale:  2;
-		width : 20%;
+		top: 50%;
+		left: -15%;
+		width: 20%;
 		height: auto;
+		color: var(--color-accent);
+		rotate: -99deg;
+		scale: 2;
 
 		.cards_svg {
 			fill: none;
@@ -37,94 +41,93 @@
 			stroke-dashoffset: -3000;
 		}
 
-		@media (max-width: 1024px){
+		@media (max-width: 1024px) {
 			display: none;
 		}
 	}
 
-    .card{
-		flex : 1;
-	    border-radius: 15px;
-	    overflow: hidden;
-	    position: relative;
-	    display: flex;
-	    z-index: auto;
-	    background: #0e0e0e;
+	.card {
+		position: relative;
+		z-index: auto;
+		display: flex;
+		overflow: hidden;
+		flex: 1;
+		border-radius: 15px;
+		background: #0e0e0e;
 
-	    &-article{
-		    flex: 1;
-		    display: flex;
-		    flex-direction: column;
-		    justify-content: flex-end;
-		    gap: 10px;
-		    color: var(--color-white);
-		    padding: clamp(30px, 3.9vw, 60px);
-		    aspect-ratio: 1/1;
+		&-article {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: clamp(30px, 3.9vw, 60px);
+			color: var(--color-white);
+			gap: 10px;
+			aspect-ratio: 1/1;
 
-		    .card-title{
-			    font-weight: 600;
-			    font-size: var(--m-font-size);
-			    line-height: 1.2;
-		    }
+			.card-title {
+				font-size: var(--m-font-size);
+				font-weight: 600;
+				line-height: 1.2;
+			}
 
-		    .typo{
-			    line-height: 1.7;
-		    }
-	    }
+			.typo {
+				line-height: 1.7;
+			}
+		}
 
-	    &-img{
-		    overflow: hidden;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    right: 0;
-		    bottom: 0;
+		&-img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
 
-		    img{
-			    display: block;
-			    width: 100%;
-			    height: 100%;
-			    mix-blend-mode: lighten;
-		    }
-	    }
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				mix-blend-mode: lighten;
+			}
+		}
 
-	    &:nth-of-type(1){
-		    .card-img{
-			    img{
-				    object-fit: contain;
-				    object-position: top center;
-			    }
-		    }
-	    }
+		&:nth-of-type(1) {
+			.card-img {
+				img {
+					object-fit: contain;
+					object-position: top center;
+				}
+			}
+		}
 
-	    &:nth-of-type(2){
-		    .card-img{
-				img{
+		&:nth-of-type(2) {
+			.card-img {
+				img {
 					object-fit: cover;
 				}
-		    }
-	    }
+			}
+		}
 
-	    @media (max-width: 768px){
-		    flex-direction: column;
-		    background-color: transparent;
-		    gap: 15px;
+		@media (max-width: 768px) {
+			flex-direction: column;
+			background-color: transparent;
+			gap: 15px;
+			&-article {
+				padding: 0;
+				aspect-ratio: auto;
+			}
+			&-img {
+				position: relative;
+				border-radius: 15px;
+				background: #0e0e0e;
+				aspect-ratio: 1;
 
-		    &-article{
-			    aspect-ratio: auto;
-			    padding: 0;
-		    }
-		    &-img{
-			    background: #0e0e0e;
-			    aspect-ratio: 1;
-			    position: relative;
-			    border-radius: 15px;
-
-			    img{
-				    object-position: top center;
-				    object-fit: cover !important;
-			    }
-		    }
-	    }
-    }
+				img {
+					object-position: top center;
+					object-fit: cover !important;
+				}
+			}
+		}
+	}
 }

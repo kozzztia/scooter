@@ -2,7 +2,11 @@
 
 .single-banner-section {
 	color: var(--color-white);
+	scroll-margin-top: var(--header-height);
 	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
 	.single-banner-inner {
 		position: relative;
@@ -11,8 +15,7 @@
 		max-width: var(--primary-block-width);
 		margin-inline: auto;
 		gap: 40px;
-
-		@media (max-width:  768px){
+		@media (max-width: 768px) {
 			flex-direction: column;
 		}
 	}
@@ -23,11 +26,9 @@
 		flex-direction: column;
 		justify-content: center;
 		padding-block: 80px;
-
-		@media (max-width:  768px){
+		@media (max-width: 768px) {
 			padding-block: 40px;
 		}
-
 
 		&-title {
 			font-size: var(--xl-font-size);
@@ -37,22 +38,23 @@
 			color: var(--color-accent);
 		}
 
-		&-links{
-			max-height: 40px;
+		&-links {
 			display: flex;
-			gap : 20px;
+			max-height: 40px;
+			gap: 20px;
 
-			a{
-				height: 100%;
+			a {
 				width: auto;
+				height: 100%;
 				cursor: pointer;
-				img{
-					height: 100%;
+
+				img {
 					width: auto;
+					height: 100%;
 				}
 			}
 
-			@media (max-width:  768px){
+			@media (max-width: 768px) {
 				justify-content: center;
 			}
 		}
@@ -63,8 +65,7 @@
 			z-index: 100;
 			max-width: 350px;
 			margin-bottom: 40px;
-
-			@media (max-width:  768px){
+			@media (max-width: 768px) {
 				max-width: 100%;
 				margin-bottom: 20px;
 			}
@@ -72,35 +73,35 @@
 	}
 
 	.banner-image {
-		flex: 1;
-		height: auto;
 		position: relative;
 		overflow: hidden;
+		flex: 1;
+		height: auto;
 
 		img {
 			display: block;
 			width: 100%;
 			max-width: 400px;
-			object-fit: contain;
-			object-position: center top;
 			margin-right: 10%;
 			margin-bottom: -35%;
-			@media (max-width:  768px){
+			object-fit: contain;
+			object-position: center top;
+			@media (max-width: 768px) {
 				max-width: 100%;
-				margin-bottom: -25%;
 				margin-right: 0;
+				margin-bottom: -25%;
 			}
 		}
 	}
 
 	.single-banner-decor {
 		position: absolute;
-		width : 200px;
-		height: auto;
 		top: -8%;
 		left: 80%;
-		rotate: 30deg;
+		width: 200px;
+		height: auto;
 		color: var(--color-accent);
+		rotate: 30deg;
 		scale: 2;
 
 		.single-banner_svg {
@@ -112,7 +113,7 @@
 			stroke-dashoffset: 2000;
 		}
 
-		@media (max-width:  1024px){
+		@media (max-width: 1024px) {
 			display: none;
 		}
 	}

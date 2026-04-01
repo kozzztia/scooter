@@ -2,6 +2,10 @@
 
 .tab-section {
 	padding-inline: var(--block-side-padding);
+	scroll-margin-top: var(--header-height);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
 
 	.tab-inner {
 		position: relative;

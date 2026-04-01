@@ -2,7 +2,7 @@
 
 {% block block %}
 
-<div class="banner-section {% if fields.class %}{{ fields.class }}{% endif %}">
+<div class="banner-section {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.id %} id="{{ fields.id }}" {% endif %}>
     <div class="banner-inner">
     {% if fields.decor %}
         <svg class="banner-decor" viewBox="0 0 1756.5 1137.8" fill="none" xmlns="http://www.w3.org/2000/svg">
