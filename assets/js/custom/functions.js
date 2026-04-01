@@ -92,8 +92,8 @@ function initTabAutoClicker(el) {
 
     start();
 
-    $(el).on('mouseenter', stop);
-    $(el).on('mouseleave', start);
+    $('.tab-inner').on('mouseenter', stop);
+    $('.tab-inner').on('mouseleave', start);
 }
 
 
