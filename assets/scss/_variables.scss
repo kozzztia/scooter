@@ -1,0 +1,38 @@
+/* variables!
+-------------------------------------------------------------- */
+:root {
+	// colors
+	--color-white: #F1F1F1;
+	--color-white-rgb: 241, 241, 241;
+	--color-black: #151515;
+	--color-black-rgb: 21, 21, 21;
+	--color-dark: #222222;
+	--color-dark-rgb: 34, 34, 34;
+	--color-red: #FF4C0D;
+	--color-red-rgb: 255, 76, 13;
+	--red-gradient: linear-gradient(#FC501F 100%, #FC501F00 0%);
+	--dark-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+	--dark-light-gradient: linear-gradient(35deg , rgba(21,21,21,1) 40%, rgba(40,40,40,1) 100%);
+
+
+	//theme
+	--color: var(--color-white);
+	--background-color: var(--color-dark);
+	--color-accent: var(--color-red);
+	//dynamic sizes
+	--xxl-font-size:      clamp(36px, 5.5vw, 80px);   /* Hero title */
+	--xl-font-size:       clamp(28px, 3.5vw, 45px);   /* H1 */
+	--l-font-size:        clamp(20px, 2.5vw, 30px);   /* H2/H3 */
+	--m-font-size:        clamp(16px, 1.8vw, 20px);   /* Body text */
+	--s-font-size:        clamp(14px, 1.4vw, 16px);   /* Small text */
+	--xs-font-size:       clamp(12px, 1vw, 14px);     /* Extra small */
+
+	--block-side-padding: clamp(16px, 3vw, 40px);
+	--header-height:      clamp(85px, 8vw, 134px);
+
+	//sizes
+	--primary-block-width: 1159px;
+	--radius: 15px;
+	//other
+	--main-font-family: Gilroy, sans-serif;
+}

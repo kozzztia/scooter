@@ -1,0 +1,287 @@
+@use '../../mixins' as *;
+
+.tab-section {
+	padding-inline: var(--block-side-padding);
+	scroll-margin-top: var(--header-height);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
+
+	.tab-inner {
+		position: relative;
+		max-width: var(--primary-block-width);
+		color: var(--color-white);
+		margin-inline: auto;
+
+		input {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+		}
+	}
+
+	.tab-decor {
+		position: absolute;
+		z-index: -1;
+		top: 10%;
+		left: -10%;
+		width: 120%;
+		color: var(--color-accent);
+
+		.tab_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 5;
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 4800;
+			stroke-dashoffset: 4800;
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	.tab {
+		display: flex;
+		margin-bottom: 20px;
+		color: var(--color-white);
+
+		&-label {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+		}
+
+		&-title {
+			font-size: var(--m-font-size);
+			@include transition(opacity 0.2s);
+		}
+
+		&-thumb {
+			height: 3px;
+			background: var(--color-white);
+			margin-block: 15px;
+			@include transition(opacity 0.2s, background-color 0.2s);
+		}
+
+		.typo {
+			font-size: var(--xs-font-size);
+			@include transition(opacity 0.2s);
+		}
+	}
+
+	.gallery {
+		display: flex;
+		aspect-ratio: 8/3;
+
+		&-label {
+			overflow: hidden;
+			border-radius: 15px;
+			@include transition(all 0.3s);
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+
+	.desktop {
+		display: block;
+
+		.tab-title, .typo, .tab-thumb {
+			opacity: 0.4;
+		}
+
+		.typo {
+			padding-right: 20px;
+		}
+
+		.gallery-label {
+			height: 70%;
+			opacity: 0;
+		}
+
+		&:has(input[id$='-1']:checked) {
+			.tab {
+				label[for$='-1'] {
+					.tab-title, .typo, .tab-thumb {
+						opacity: 1;
+					}
+
+					.tab-thumb {
+						background-color: var(--color-accent);
+					}
+				}
+			}
+
+			.gallery {
+				label[for$='-1'] {
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
+				}
+
+				label[for$='-2'] {
+					width: calc(33% - 10px);
+					margin-left: 20px;
+					opacity: 1;
+				}
+
+				label[for$='-3'], label[for$='-4'] {
+					visibility: hidden;
+					width: 0;
+				}
+			}
+		}
+
+		&:has(input[id$='-2']:checked) {
+			.tab {
+				label[for$='-2'] {
+					.tab-title, .typo, .tab-thumb {
+						opacity: 1;
+					}
+
+					.tab-thumb {
+						background-color: var(--color-accent);
+					}
+				}
+			}
+
+			.gallery {
+				label[for$='-2'] {
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
+					scale: 1;
+				}
+
+				label[for$='-3'] {
+					width: calc(33% - 10px);
+					margin-left: 20px;
+					opacity: 1;
+				}
+
+				label[for$='-4'], label[for$='-1'] {
+					visibility: hidden;
+					width: 0;
+				}
+			}
+		}
+
+		&:has(input[id$='-3']:checked) {
+			.tab {
+				label[for$='-3'] {
+					.tab-title, .typo, .tab-thumb {
+						opacity: 1;
+					}
+
+					.tab-thumb {
+						background-color: var(--color-accent);
+					}
+				}
+			}
+
+			.gallery {
+				label[for$='-3'] {
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
+					scale: 1;
+				}
+
+				label[for$='-1'] {
+					width: calc(33% - 10px);
+					margin-right: 20px;
+					opacity: 1;
+				}
+
+				label[for$='-2'] {
+					visibility: hidden;
+					width: 0;
+				}
+
+				&:has(label[for$='-4']) {
+					label[for$='-4'] {
+						width: calc(33% - 10px);
+						margin-left: 20px;
+						opacity: 1;
+					}
+
+					label[for$='-1'] {
+						visibility: hidden;
+						width: 0;
+					}
+				}
+			}
+		}
+
+		&:has(input[id$='-4']:checked) {
+			.tab {
+				label[for$='-4'] {
+					.tab-title, .typo, .tab-thumb {
+						opacity: 1;
+					}
+
+					.tab-thumb {
+						background-color: var(--color-accent);
+					}
+				}
+			}
+
+			.gallery {
+				label[for$='-4'] {
+					width: calc(67% - 10px);
+					height: 100%;
+					opacity: 1;
+					scale: 1;
+				}
+
+				label[for$='-1'] {
+					width: calc(33% - 10px);
+					height: 70%;
+					margin-right: 20px;
+					opacity: 1;
+				}
+
+				label[for$='-2'], label[for$='-3'] {
+					visibility: hidden;
+					width: 0;
+					opacity: 0;
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	.mobile {
+		display: none;
+		@media (max-width: 1024px) {
+			display: block;
+		}
+
+		.tab-thumb {
+			width: 20%;
+			min-width: 150px;
+			background-color: var(--color-accent);
+		}
+
+		.tab-title, {
+			color: var(--color-accent);
+		}
+
+		.gallery-label {
+			margin-block: 20px;
+		}
+	}
+}

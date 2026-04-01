@@ -1,0 +1,120 @@
+@use '../../mixins' as *;
+
+.single-banner-section {
+	color: var(--color-white);
+	scroll-margin-top: var(--header-height);
+	padding-inline: var(--block-side-padding);
+	@media (max-width: 1024px) {
+		scroll-margin-top: 20px;
+	}
+
+	.single-banner-inner {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		max-width: var(--primary-block-width);
+		margin-inline: auto;
+		gap: 40px;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+	}
+
+	.banner-article {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		padding-block: 80px;
+		@media (max-width: 768px) {
+			padding-block: 40px;
+		}
+
+		&-title {
+			font-size: var(--xl-font-size);
+			font-weight: 500;
+			line-height: 1;
+			margin-bottom: 20px;
+			color: var(--color-accent);
+		}
+
+		&-links {
+			display: flex;
+			max-height: 40px;
+			gap: 20px;
+
+			a {
+				width: auto;
+				height: 100%;
+				cursor: pointer;
+
+				img {
+					width: auto;
+					height: 100%;
+				}
+			}
+
+			@media (max-width: 768px) {
+				justify-content: center;
+			}
+		}
+
+		.typo {
+			font-size: var(--xs-font-size);
+			font-weight: 400;
+			z-index: 100;
+			max-width: 350px;
+			margin-bottom: 40px;
+			@media (max-width: 768px) {
+				max-width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.banner-image {
+		position: relative;
+		overflow: hidden;
+		flex: 1;
+		height: auto;
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: 400px;
+			margin-right: 10%;
+			margin-bottom: -35%;
+			object-fit: contain;
+			object-position: center top;
+			@media (max-width: 768px) {
+				max-width: 100%;
+				margin-right: 0;
+				margin-bottom: -25%;
+			}
+		}
+	}
+
+	.single-banner-decor {
+		position: absolute;
+		top: -8%;
+		left: 80%;
+		width: 200px;
+		height: auto;
+		color: var(--color-accent);
+		rotate: 30deg;
+		scale: 2;
+
+		.single-banner_svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 5;
+			stroke-miterlimit: 10;
+			stroke-dasharray: 2000;
+			stroke-dashoffset: 2000;
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+}
