@@ -1,0 +1,244 @@
+{% extends "overall/base.twig" %}
+
+{% block base %}
+
+    {% set blocks = [
+        {
+            'name': 'hero-2',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'class': 'top animation',
+            'id': 'main',
+            'title': 'Stylish electric scooter with a powerful battery',
+            'description': 'Improved performance for long-distance travel. It works as simply as it looks.',
+            'slides': [
+                {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp', 'decor': true},
+                {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp', 'decor': true},
+            ]
+        }
+        },
+
+        {
+            'name': 'text',
+            'fields': {
+            'style': 'margin-bottom: 25px;',
+            'class': 'animate',
+            'id': 'appearance',
+            'title': 'A powerful battery and economical charge consumption allow you to cover distances of up to 45 km'
+        }
+        },
+
+        {
+            'name': 'tab',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'decor': true,
+            'class': 'animate',
+            'name': 'tab',
+            'tabs': [
+                {'id': '1', 'title': 'Three speed modes', 'description': 'Three driving modes allow you to feel comfortable in any situation. "S" mode increases speed if you are running late for work. When strolling through the park, activate "D" mode. Turn on "Pedestrian" mode when driving on a busy street.', 'img': img_folder~"tab-1.webp",},
+                {'id': '2', 'title': 'Energy recovery system', 'description': 'During braking and coasting, the system converts kinetic energy into electrical energy, allowing the scooter to increase its overall range.', 'img': img_folder~"tab-2.webp",},
+                {'id': '3', 'title': 'Powerful battery', 'description': 'The scooter is equipped with a 12,800 mAh battery, allowing it to travel up to 45 km without recharging.', 'img': img_folder~"tab-3.webp",},
+            ],
+        }
+        },
+
+        {
+            'name': 'banner',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'class': 'animate',
+            'decor': true,
+            'title': 'High movement speed',
+            'content': 'An engine with a power of up to 600 W allows for speeds of up to 25 km/h.',
+        }
+        },
+
+        {
+            'name': 'text',
+            'fields': {
+            'style': 'margin-bottom: 25px;',
+            'class': 'accented animate',
+            'title': 'A laconic modern design with nothing superfluous',
+        }
+        },
+
+        {
+            'name': 'cards',
+            'fields': {
+            'style': 'margin-bottom: 100px;',
+            'class': 'animate',
+            'decor': true,
+            'cards': [
+                {'title': 'Minimalistic design', 'content': 'The scooter\'s frame, components, and accessories are designed in a unified style, prioritizing user convenience. A single touch is all it takes to start the scooter.',
+                    'img': img_folder~'card-1.webp'},
+                {'title': 'User-friendly control panel', 'content': 'Conveniently located controls. Display 8 types of real-time data: speed, mode, battery charge, lock status, and more.',
+                    'img': img_folder~'card-2.webp'},
+            ],
+        }
+        },
+
+        {
+            'name': 'text',
+            'fields': {
+            'id': 'sequrity',
+            'style': 'margin-bottom: 25px;',
+            'class': 'accented animate',
+            'title': 'Cares about your safety',
+        }
+        },
+
+        {
+            'name': 'tab',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'class': 'animate',
+            'decor': true,
+            'name': 'two',
+            'tabs': [
+                {'id': '1', 'title': 'Bright running lights', 'description': 'A well-thought-out light dispersion angle allows for good visibility without blinding other road users.', 'img': img_folder~"tab-2-1.webp",},
+                {'id': '2', 'title': 'Dual braking system', 'description': 'When you press the brake handle, the front and rear wheel systems are activated sequentially, reducing the braking distance and ensuring a safe and smooth stop.', 'img': img_folder~"tab-2-2.webp",},
+                {'id': '3', 'title': 'Bright taillight', 'description': 'When the daytime running lights are turned on, the taillight turns on automatically. When you press the brake, it starts flashing, warning other road users.', 'img': img_folder~"tab-2-3.webp",},
+                {'id': '4', 'title': 'Reflectors front, side and rear', 'description': 'Improved reflectors placed on four sides make your ride safer at night.', 'img': img_folder~"tab-2-4.webp",},
+            ],
+        }
+        },
+
+
+        {
+            'name': 'single-banner',
+            'fields': {
+            'style': '',
+            'class': 'animate',
+            'title': 'Mi Home mobile app',
+            'content': 'Connect your scooter to the Mi Home mobile app and use it to lock and unlock the scooter, as well as view basic data such as mileage, speed, and battery level.',
+            'img': img_folder~'single-banner.webp',
+            'decor': true,
+            'links': [
+                {'url': '#', 'icon': img_folder~'store.webp',},
+                {'url': '#', 'icon': img_folder~'google.webp',},
+            ],
+        }
+        },
+
+        {
+            'name': 'banner',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'id': 'about',
+            'decor': true,
+            'class': 'about animate',
+            'title': 'About the Xiaomi brand',
+            'content': 'Xiaomi was founded by entrepreneur Lei Jun in 2010 under the motto "Innovation for Everyone." We believe that high-quality products and advanced technologies should be accessible to everyone.',
+        }
+        },
+
+        {
+            'name': 'text',
+            'fields': {
+            'style': 'margin-bottom: 25px;',
+            'id': 'reviews',
+            'class': 'accented animate',
+            'title': 'Mi Scooter Pro 2 Reviews',
+        }
+        },
+
+        {
+            'name': 'slider',
+            'fields': {
+            'style': 'margin-bottom: 50px;',
+            'class': 'animate',
+            'decor': true,
+            'button': {
+                'title': 'Leave feedback',
+                'type': 'button',
+                'label': 'Toggle feedback popup',
+            },
+            'slides': [
+                {'title': 'john doe', 'content': '<p>I was deciding between two models: the Mi Scooter Pro 2 and the Ninebot Max 30P. The Max\'s advantages include its 10-inch tires, longer range, and charging speed. The Xiaomi\'s advantages include portability (weight and balance).</p><p>Ultimately, I bought the Xiaomi and installed 10-inch tires—a comfortable ride with a lighter weight.</p>'},
+                {'title': 'johnatan doe', 'content': '<p>I also own the first version of the scooter (m365). The Pro 2 version has addressed many of the m365\'s shortcomings:</p>
+                        <p>-the folding assembly and tongue have been reinforced</p>
+                        <p>-the battery is housed in a separate, rigid aluminum case, preventing it from breaking due to vibration</p>
+                        <p>-a rear fender support and taillight cable guard have been installed.</p>'},
+                {'title': 'johnny doe', 'content': '<p>I weigh 57 kg, and with the maximum speed of 32 km/h in S mode in Moscow, I managed 25 km with 16% charge remaining. IMPORTANT: Monitor the tire pressure. I highly recommend buying an electronic pump from Xiaomi and inflating it once a week. The scooter arrives from the factory with significantly underinflated tires.</p>'},
+                {'title': 'jo doe', 'content': '<p>I was deciding between two models: the Mi Scooter Pro 2 and the Ninebot Max 30P. The Max\'s advantages include its 10-inch tires, longer range, and charging speed. The Xiaomi\'s advantages include portability (weight and balance).</p><p>Ultimately, I bought the Xiaomi and installed 10-inch tires—a comfortable ride with a lighter weight.</p>'},
+                {'title': 'anon', 'content': '<p>I also own the first version of the scooter (m365). The Pro 2 version has addressed many of the m365\'s shortcomings:</p>
+                        <p>-the folding assembly and tongue have been reinforced</p>
+                        <p>-the battery is housed in a separate, rigid aluminum case, preventing it from breaking due to vibration</p>
+                        <p>-a rear fender support and taillight cable guard have been installed.</p>'},
+            ]
+        }
+        },
+
+        {
+            'name': 'question',
+            'fields': {
+            'style': 'margin-bottom: 70px;',
+            'class': 'animate',
+            'id': 'faq',
+            'decor': true,
+            'title': 'Frequently Asked Questions',
+            'description': '<p>All your frequently asked questions about the Mi Scooter Pro 2 electric scooter.</p>
+                            <p>If you have your own question, please ask it using the feedback form.</p>',
+            'button': {
+                'title': 'Ask a question',
+                'type': 'button',
+                'label': 'Toggle question popup',
+            },
+            'content': [
+                {'subtitle':  'Are categories needed?', 'content': '<p>A well-thought-out light dispersion angle allows for good visibility without blinding other road users.</p>'},
+                {'subtitle':  'I weigh 135 kg, will this scooter handle it?', 'content': '<p>The scooter will definitely hold up and move, but not at top speed.</p>'},
+                {'subtitle':  'Is there water resistance?', 'content': 'The electric scooter has an IP54 rating. It is protected against dust and splashes from any direction. Submersion in water may cause damage.'},
+                {'subtitle':  'Is this the China or Europe version?', 'content': 'This is the European version, with all updates and a European plug.'},
+
+            ]
+        }
+        },
+
+        {
+            'name': 'hero-3',
+            'fields': {
+            'style': '',
+            'class': 'animate',
+            'decor': true,
+            'title': 'Mi Electric Scooter Pro 2',
+            'cost': '54 990 $',
+            'slides': [
+                {'text': 'white', 'role': 'white', 'img': img_folder~'hero-bike-1.webp', 'title': 'Scope of delivery',
+                    'description': '<p>Power adapter</p>
+                                    <p>Hex key</p>
+                                    <p>Pump extension</p>
+                                    <p>Screws x 5</p>
+                                    <p>Spare tire</p>
+                                    <p>User manual</p>
+                                    <p>Information booklet</p>'
+                },
+                {'text': 'black', 'role': 'black', 'img': img_folder~'hero-bike-2.webp', 'title': 'Scope of delivery',
+                    'description': '<p>Power adapter</p>
+                                    <p>Hex key</p>
+                                    <p>Pump extension</p>
+                                    <p>Screws x 5</p>
+                                    <p>Spare tire</p>
+                                    <p>User manual</p>
+                                    <p>Information booklet</p>'
+                },
+            ],
+            'button': {
+                'title': 'Buy',
+                'type': 'button',
+                'label': 'Toggle buy popup',
+            },
+        }
+        },
+    ] %}
+
+    {% for block in blocks %}
+        {% include 'blocks/main/' ~ block.name ~ '.twig' with
+            {
+                'block_group': 'main',
+                'block_name': block.name,
+                'fields': block.fields,
+            } %}
+    {% endfor %}
+
+{% endblock %}
